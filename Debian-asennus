@@ -1,0 +1,38 @@
+## Virtuaalikoneen ja Debianin asennus
+
+Aloitin asennuksen edellisillan luennon pohjalta kaivamalla asennusohjeet sivulta www.terokarvinen.com. En siis lukemalla sivuille myöhemmin päivitettyä h1 -kotitehtäväohjetta. Ensimmäinen virhe,
+koska ohjeen perusteella olisin tajunnut raportoida eri vaiheista paljon tarkemmin.
+Nyt yritän suurimmalta osin vain jälkeenpäin muistella, mitä ongelmia kohtasin. 
+
+(lisää kuva ohjeesta)
+
+Mikä tietokone käytössä?
+
+Ennen Debianin latausta, latasin Oracle Virtual Boxin. 
+Kuvia en muistnut vielä tässä kohtaa ottaa. 
+Asennuksen yhteydessä, järjestelmä herjasi että " Python core package and win32api are needed", ja että jos niitä ei asenna nyt, ne täytyy määrittää manuaalisesti jälkeenpäin. Jatkoin asennusta, ja ajattelin selvittää myöhemmin,mitä nämä olivat.
+Tämän lataus sujui sen jälkeen ilman suurempia ongelmia.
+
+Sitten itse Debianin kimppuun. 
+Asennusohjeen mukaisesti, menin hakemaan latauspakettia osoitteesta  live amd64 folder on cdimage.debian.org. 
+Sivun auetessa, ihmettelin hetken aikaa, koska paketteja olikin useampia, hieman eri nimisiä. Minulla ei ollut mitään käsitystä siitä, mitä nämä kaikki versiot olivat, ja mikä niistä pitäisi valita. Katsoin ohjetta uudelleen,
+ja löysin ohjeesta tiedon, että nimi tulisi olla jotakuinkin tämä: debian-live-12.6.0-amd64-xfce.iso. 
+Listan lopusta sitten löytyikin tämä, ja lähdin lataamaan pakettia. 
+
+Latauksen jälkeen avasin virtual boxin, ja aloin luoda ensimmäistä virtuaalikonetta. Koneen luominen meni muutoin pitkälti ohjeen mukaan, mutta ongelmia kohtasin siinä kun piti valita virtual optical disc file.
+Yritin saada sinne avattua koneelleni ladattuja tiedostoja, mutta mikään niistä ei näyttänyt sopivan kyseiseen tarkoitukseen. Hetken aikaa asiaa pähkittyäni, avasin youtuben, ja laitoin hakuun 'Install Debian on virtual box'.
+Ensimmäinen video oli SavvyNik :in video "How to Install Debian 12 on VirtualBox in Windows | Beginners Guide". Se kuulosti juuri sopivalta minulle. Ensin luulin ongelman liittyvän siihen,
+kun asennuksen aloituksessa en videon mukaisesti ollut klikannut aiemmin "ISO Image" -täppää aktiiviseksi. Tämän jälkeen poistin koko latauksen, ja latasin koko Debian -paketin uudelleen. 
+Vain todetakseni, ettei sellaista kohtaa ollut minun koneellani asennussivullani. Katsoin videota eteenpäin, ja lopulta tajusin videon ohjeen mukaisesti raahata tiedoston suoraan ladatuista,
+jolloin se toimi ja pääsin eteenpäin. 
+Virtuaalikoneelle päästyäni testasin ensin, että se toimii. Avasin nettiselaimen, ja pääsin sillä onnistuneesti osoitteeseen terokarvinen.com.
+Tämän jälkeen aloin asentaa Debiania. Tässä kohtaa ei myöskään ongelmia, kun eteni ohjeen mukaan. 
+Asennus oli viimein valmis!
+
+Seuraavaksi ohjeessa oli kohta "Solve a Black Screen with xforcevesa (optional)". Luin ohjeen läpi, mutta en ainakaan tässä kohtaa ihan ymmärtänyt, mikä tämä vaihe oli, joten en tehnyt sitä. 
+Sen sijaan, etenin ohjeessa kohtaan "First Steps". Siin käskettiin avata virtuaalikoneelta terminaaliemulaattori, ja ladata kaikki uusimmat päivitykset komennolla "$ sudo apt-get -y dist-upgrade". 
+Sen jälkeen asensin ja käynnistin palomuurin komennoilla: "$ sudo apt-get -y install ufw" ja
+"$ sudo ufw enable". Tämän jälkeen kirjauduin ulos virtuaalikoneesta, sekä käynnistin sen uudelleen. 
+
+
+
