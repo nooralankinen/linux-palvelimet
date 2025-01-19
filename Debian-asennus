@@ -22,7 +22,11 @@ Latauksen jälkeen avasin virtual boxin, ja aloin luoda ensimmäistä virtuaalik
 Yritin saada sinne avattua koneelleni ladattuja tiedostoja, mutta mikään niistä ei näyttänyt sopivan kyseiseen tarkoitukseen. Hetken aikaa asiaa pähkittyäni, avasin youtuben, ja laitoin hakuun 'Install Debian on virtual box'.
 Ensimmäinen video oli SavvyNik :in video "How to Install Debian 12 on VirtualBox in Windows | Beginners Guide". Se kuulosti juuri sopivalta minulle. Ensin luulin ongelman liittyvän siihen,
 kun asennuksen aloituksessa en videon mukaisesti ollut klikannut aiemmin "ISO Image" -täppää aktiiviseksi. Tämän jälkeen poistin koko latauksen, ja latasin koko Debian -paketin uudelleen. 
-Aloittaessani virtuaalikoneen luomista uudelleen, totesin ettei sellaista kohtaa ollut minun asennussivullani. Katsoin videota eteenpäin, ja lopulta tajusin videon ohjeen mukaisesti raahata tiedoston suoraan ladatuista,
+Aloittaessani virtuaalikoneen luomista uudelleen, totesin ettei sellaista kohtaa edes ollut minun luomissivullani.
+
+![Add file: Upload](virtual-machine.png)
+
+Katsoin videota hetken eteenpäin, ja lopulta tajusin videon mukaisesti raahata tiedoston suoraan ladattujen tiedostojen kansiosta ilman tiedoston avaamista,
 jolloin se toimi ja pääsin eteenpäin. 
 Virtuaalikoneelle päästyäni testasin ensin, että se toimii. Avasin nettiselaimen, ja pääsin sillä onnistuneesti osoitteeseen terokarvinen.com.
 Tämän jälkeen aloin asentaa Debiania. Tässä kohtaa ei myöskään ongelmia, kun eteni ohjeen mukaan. 
