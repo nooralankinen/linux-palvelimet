@@ -81,10 +81,16 @@ Tämän jälkeen kirjauduin ulos virtuaalikoneesta, sekä käynnistin sen uudell
 ## Lähteet
 
 Tero Karvinen, 2006, Raportin kirjoittaminen. https://terokarvinen.com/2006/raportin-kirjoittaminen-4/ 
+
 Free Software Foundation, 2024, What is free software? https://www.gnu.org/philosophy/free-sw.html
+
 Tero Karvinen, 2024, Install Debian on Virtualbox. https://terokarvinen.com/2021/install-debian-on-virtualbox/
+
 Debian Live Image download. https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/
+
 Virtual Box Installer. https://www.virtualbox.org/wiki/Downloads
+
+YouTube, SavvyNik, 2024. How To Install Debian 12 on VirtualBox in Windows. https://www.youtube.com/watch?v=GkIb-l1K2FQ
 
 
 
