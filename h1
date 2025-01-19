@@ -5,7 +5,7 @@ suurpiirteisesti ylös ne kohdat, joissa minulla oli asennuksen kanssa ongelmia.
 
  ![Add file: Upload](asennusohje.png)
 
-Koneena minulla on Asus Vivobook Pro 15 -läppäri. 
+Koneena minulla on Asus Vivobook Pro 15 -läppäri, host OS Windows 11 Home. 
 
 Ennen Debianin latausta, latasin Oracle Virtual Boxin osoitteesta https://www.virtualbox.org/wiki/Downloads. 
 
@@ -28,21 +28,26 @@ Aloittaessani virtuaalikoneen luomista uudelleen, totesin ettei sellaista kohtaa
 
 Katsoin videota hetken eteenpäin, ja lopulta tajusin videon mukaisesti raahata tiedoston suoraan ladattujen tiedostojen kansiosta ilman tiedoston avaamista,
 jolloin se toimi ja pääsin eteenpäin. 
-Virtuaalikoneelle päästyäni testasin ensin, että se toimii. Avasin nettiselaimen, ja pääsin sillä onnistuneesti osoitteeseen terokarvinen.com.
-Tämän jälkeen aloin asentaa Debiania. Tässä kohtaa ei myöskään ongelmia, kun eteni ohjeen mukaan. 
-Asennus oli viimein valmis!
+Virtuaalikoneelle päästyäni testasin ensin, että se toimii. 'Applications' -valikosta avasin nettiselaimen klikkaamalla 'Web Browser', ja kirjoitin osoiteriville terokarvinen.com. Sivu aukesi onnistuneesti, jonka jälkeen suljin selaimen.
 
-Seuraavaksi ohjeessa oli kohta "Solve a Black Screen with xforcevesa (optional)". Luin ohjeen läpi, mutta en ainakaan tässä kohtaa ihan ymmärtänyt, mikä tämä vaihe oli, joten en tehnyt sitä. 
-Sen sijaan, etenin ohjeessa kohtaan "First Steps". Siin käskettiin avata virtuaalikoneelta terminaaliemulaattori, ja ladata kaikki uusimmat päivitykset komennolla "$ sudo apt-get -y dist-upgrade". 
+![Add file: Upload](vm-testing.png)
+
+Tämän jälkeen aloin asentaa Debiania. Avasin virtuaalikoneen, ja vasemman reunan "Install Debian" kuvaketta klikkaamalla etenin asennukseen. Klikkailin asennusohjeen mukaisesti oikean sijainnin, kielen (englanti), näppäimistön (Finnish) ja testasin ääkkösten toimivuuden testilaatikossa.
+'Partitions' -välilehdellä valitsin 'Erase disk', ja 'Users' -välilehdellä syötin puolestaan omat tietoni, sekä asetin salasanan. 'Summary' -lehden tarkistuksen jälkeen klikkasin sivun alareunasta 'Install' -painiketta. 
+Kone raksutteli asennusta hetken aikaa, kunnes tuli valmista.
+
+Seuraavaksi ohjeessa oli kohta "Solve a Black Screen with xforcevesa (optional)". Luin ohjeen läpi, mutta minun mielestäni kyseessä oli niin vähäpätöinen ongelma, etten alkanut suorittaa tätä kohtaa ohjeesta. 
+Sen sijaan, etenin ohjeessa kohtaan "First Steps". Siinä pyydettiin avaamaan virtuaalikoneelta terminaaliemulaattori, ja klikkailin 'Applications' -valikosta 'Terminal Emulatori'in auki. Seuraavaksi ohjeena oli listata kaikki uusimmat versiot komennolla $ sudo apt-get update.
+Järjestelmä pyysi tämän jälkeen vielä salasanaa.
+Seuraavaksi ladattiin kaikki nämä uusimmat versiot komennolla "$ sudo apt-get -y dist-upgrade". 
 
 ![Add file: Upload](terminaali.png)
 
-Sen jälkeen asensin ja käynnistin palomuurin komennoilla: "$ sudo apt-get -y install ufw" ja
-"$ sudo ufw enable". 
+Tämän jälkeen asensin ja käynnistin palomuurin komennoilla "$ sudo apt-get -y install ufw" sekä "$ sudo ufw enable". 
 
 ![Add file: Upload](firewall activation.png)
 
-Tämän jälkeen kirjauduin ulos virtuaalikoneesta, sekä käynnistin sen uudelleen. 
+Tämän jälkeen kirjauduin ulos virtuaalikoneesta, sekä käynnistin sen uudelleen (Application ja sieltä Log Out -> Restart).
 
 
 
