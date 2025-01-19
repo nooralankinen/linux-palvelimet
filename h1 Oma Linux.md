@@ -3,16 +3,25 @@
 ## Tiivistelmät
 
 x.) Raporttiohje:
+
 -kirjoita samalla kun teet
+
 -kuvaa kaikki toiminta mahdollisimman tarkasti, jotta toistettavuus paranee
+
 -lähetä vikailmoitukset eteenpäin, jotta ongelmat saadaan korjattua
+
 -merkitse lähteet
+
 -kuvaa toimintaasi totuudenmukaisesti
 
   Free Software Definition:
+  
 -vapaalla softalla tarkoitetaan ohjelmistoa, jota voidaan vapaasti ajaa, sen koodia voidaan tutkia ja muokata, jakaa, sekä jakaa muokattuna vapaasti eteenpäin. 
+
 -vapaa softa voi olla maksullinen tai ilmainen, sekä kaupallinen 
+
 -vapaan softan tärkeimmät kriteerit:
+
    *oltava kenen tahansa käytössä, mihin tahansa tarkoitukseen
    *lähdekoodi on julkinen, sekä vapaasti muokattavissa
    *vapautta jakaa lähdekoodia, joko alkuperäisenä tai muokattuna 
@@ -59,6 +68,7 @@ Kone raksutteli asennusta hetken aikaa, kunnes tuli valmista.
 Seuraavaksi ohjeessa oli kohta "Solve a Black Screen with xforcevesa (optional)". Luin ohjeen läpi, mutta minun mielestäni kyseessä oli niin vähäpätöinen ongelma, etten alkanut suorittaa tätä kohtaa ohjeesta. 
 Sen sijaan, etenin ohjeessa kohtaan "First Steps". Siinä pyydettiin avaamaan virtuaalikoneelta terminaaliemulaattori, ja klikkailin 'Applications' -valikosta 'Terminal Emulatori'in auki.
 Seuraavaksi ohjeena oli listata kaikki uusimmat versiot komennolla
+
       $ sudo apt-get update
 
 Järjestelmä pyysi tämän jälkeen vielä salasanaa.
@@ -78,7 +88,10 @@ Tämän jälkeen asensin ja käynnistin palomuurin komennoilla
 Tämän jälkeen kirjauduin ulos virtuaalikoneesta, sekä käynnistin sen uudelleen (Application ja sieltä Log Out -> Restart).
 
 
+
+
 ## Lähteet
+
 
 Tero Karvinen, 2006, Raportin kirjoittaminen. https://terokarvinen.com/2006/raportin-kirjoittaminen-4/ 
 
