@@ -59,22 +59,22 @@ Kone raksutteli asennusta hetken aikaa, kunnes tuli valmista.
 Seuraavaksi ohjeessa oli kohta "Solve a Black Screen with xforcevesa (optional)". Luin ohjeen läpi, mutta minun mielestäni kyseessä oli niin vähäpätöinen ongelma, etten alkanut suorittaa tätä kohtaa ohjeesta. 
 Sen sijaan, etenin ohjeessa kohtaan "First Steps". Siinä pyydettiin avaamaan virtuaalikoneelta terminaaliemulaattori, ja klikkailin 'Applications' -valikosta 'Terminal Emulatori'in auki.
 Seuraavaksi ohjeena oli listata kaikki uusimmat versiot komennolla 
- $ sudo apt-get update
+     $ sudo apt-get update
 
 Järjestelmä pyysi tämän jälkeen vielä salasanaa.
 Seuraavaksi ladattiin kaikki nämä uusimmat versiot komennolla  
 
- $ sudo apt-get -y dist-upgrade
+     $ sudo apt-get -y dist-upgrade
 
 ![Add file: Upload](terminaali.png)
 
 Tämän jälkeen asensin ja käynnistin palomuurin komennoilla 
 
- $ sudo apt-get -y install ufw 
-sekä 
- $ sudo ufw enable
+    $ sudo apt-get -y install ufw 
+sekä
+    $ sudo ufw enable
 
-![Add file: Upload](firewall activation.png)
+![Add file: Upload](firewall-activation.png)
 
 Tämän jälkeen kirjauduin ulos virtuaalikoneesta, sekä käynnistin sen uudelleen (Application ja sieltä Log Out -> Restart).
 
