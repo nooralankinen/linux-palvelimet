@@ -1,6 +1,8 @@
-## Virtuaalikoneen ja Debianin asennus
+x.) 
 
-Aloitin asennuksen tiistaina 14.1 luennon jälkeen kaivamalla asennusohjeet sivulta https://terokarvinen.com/2021/install-debian-on-virtualbox/ , ja etenin sen mukaisesti. Vasta seuraavana päivänä tuli näkyviin ohje, jonka mukaan myös tästä asennuksesta tuli kirjoittaa raportti. Olin asennuksen aikana kirjannut
+a.) ## Virtuaalikoneen ja Debianin asennus
+
+Aloitin asennuksen tiistaina 14.1 luennon jälkeen hakemalla asennusohjeet sivulta https://terokarvinen.com/2021/install-debian-on-virtualbox/ , ja etenin sen mukaisesti. Vasta seuraavana päivänä tuli näkyviin ohje, jonka mukaan myös tästä asennuksesta tuli kirjoittaa raportti. Olin asennuksen aikana kirjannut
 suurpiirteisesti ylös ne kohdat, joissa minulla oli asennuksen kanssa ongelmia. Raportti on tämän vuoksi isolta osin hyvin vajavainen. 
 
  ![Add file: Upload](asennusohje.png)
