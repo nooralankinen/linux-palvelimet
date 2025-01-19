@@ -30,11 +30,15 @@ x.) Raporttiohje:
 
 ## a.) Virtuaalikoneen ja Debianin asennus
 
-Aloitin virtuaalikoneen ja Debianin asennuksen tiistaina 14.1 kurssin ensimmäisen luennon jälkeen klo 20.52, hakemalla Tero Karvisen 2024 laatimat yksityiskohtaiset asennusohjeet sivulta https://terokarvinen.com/2021/install-debian-on-virtualbox/ . 
+Aloitin virtuaalikoneen ja Debianin asennuksen kotona tiistaina 14.1 kurssin ensimmäisen luennon jälkeen klo 20.52, hakemalla Tero Karvisen 2024 laatimat yksityiskohtaiset asennusohjeet sivulta https://terokarvinen.com/2021/install-debian-on-virtualbox/ . 
 
  ![Add file: Upload](asennusohje.png)
 
 Koneena minulla on Asus Vivobook Pro 15 -läppäri, host OS Windows 11 Home. 
+
+Suoritin: 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz   3.11 GHz
+
+RAM: 8GT
 
 Ennen Debianin latausta, latasin Oracle Virtual Boxin osoitteesta https://www.virtualbox.org/wiki/Downloads. 
 
