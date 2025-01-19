@@ -1,9 +1,27 @@
-x.) 
+# h1 - Kotitehtävät
 
-a.) ## Virtuaalikoneen ja Debianin asennus
+## Tiivistelmät
 
-Aloitin asennuksen tiistaina 14.1 luennon jälkeen hakemalla asennusohjeet sivulta https://terokarvinen.com/2021/install-debian-on-virtualbox/ , ja etenin sen mukaisesti. Vasta seuraavana päivänä tuli näkyviin ohje, jonka mukaan myös tästä asennuksesta tuli kirjoittaa raportti. Olin asennuksen aikana kirjannut
-suurpiirteisesti ylös ne kohdat, joissa minulla oli asennuksen kanssa ongelmia. Raportti on tämän vuoksi isolta osin hyvin vajavainen. 
+x.) Raporttiohje:
+-kirjoita samalla kun teet
+-kuvaa kaikki toiminta mahdollisimman tarkasti, jotta toistettavuus paranee
+-lähetä vikailmoitukset eteenpäin, jotta ongelmat saadaan korjattua
+-merkitse lähteet
+-kuvaa toimintaasi totuudenmukaisesti
+
+  Free Software Definition:
+-vapaalla softalla tarkoitetaan ohjelmistoa, jota voidaan vapaasti ajaa, sen koodia voidaan tutkia ja muokata, jakaa, sekä jakaa muokattuna vapaasti eteenpäin. 
+-vapaa softa voi olla maksullinen tai ilmainen, sekä kaupallinen 
+-vapaan softan tärkeimmät kriteerit:
+   *oltava kenen tahansa käytössä, mihin tahansa tarkoitukseen
+   *lähdekoodi on julkinen, sekä vapaasti muokattavissa
+   *vapautta jakaa lähdekoodia, joko alkuperäisenä tai muokattuna 
+   
+
+
+## a.) Virtuaalikoneen ja Debianin asennus
+
+Aloitin virtuaalikoneen ja Debianin asennuksen tiistaina 14.1 kurssin ensimmäisen luennon jälkeen klo 20.52, hakemalla Tero Karvisen 2024 laatimat yksityiskohtaiset asennusohjeet sivulta https://terokarvinen.com/2021/install-debian-on-virtualbox/ . 
 
  ![Add file: Upload](asennusohje.png)
 
@@ -39,17 +57,29 @@ Tämän jälkeen aloin asentaa Debiania. Avasin virtuaalikoneen, ja vasemman reu
 Kone raksutteli asennusta hetken aikaa, kunnes tuli valmista.
 
 Seuraavaksi ohjeessa oli kohta "Solve a Black Screen with xforcevesa (optional)". Luin ohjeen läpi, mutta minun mielestäni kyseessä oli niin vähäpätöinen ongelma, etten alkanut suorittaa tätä kohtaa ohjeesta. 
-Sen sijaan, etenin ohjeessa kohtaan "First Steps". Siinä pyydettiin avaamaan virtuaalikoneelta terminaaliemulaattori, ja klikkailin 'Applications' -valikosta 'Terminal Emulatori'in auki. Seuraavaksi ohjeena oli listata kaikki uusimmat versiot komennolla $ sudo apt-get update.
+Sen sijaan, etenin ohjeessa kohtaan "First Steps". Siinä pyydettiin avaamaan virtuaalikoneelta terminaaliemulaattori, ja klikkailin 'Applications' -valikosta 'Terminal Emulatori'in auki.
+Seuraavaksi ohjeena oli listata kaikki uusimmat versiot komennolla 
+ $ sudo apt-get update
+
 Järjestelmä pyysi tämän jälkeen vielä salasanaa.
-Seuraavaksi ladattiin kaikki nämä uusimmat versiot komennolla "$ sudo apt-get -y dist-upgrade". 
+Seuraavaksi ladattiin kaikki nämä uusimmat versiot komennolla  
+
+ $ sudo apt-get -y dist-upgrade
 
 ![Add file: Upload](terminaali.png)
 
-Tämän jälkeen asensin ja käynnistin palomuurin komennoilla "$ sudo apt-get -y install ufw" sekä "$ sudo ufw enable". 
+Tämän jälkeen asensin ja käynnistin palomuurin komennoilla 
+
+ $ sudo apt-get -y install ufw 
+sekä 
+ $ sudo ufw enable
 
 ![Add file: Upload](firewall activation.png)
 
 Tämän jälkeen kirjauduin ulos virtuaalikoneesta, sekä käynnistin sen uudelleen (Application ja sieltä Log Out -> Restart).
+
+## Lähteet
+
 
 
 
