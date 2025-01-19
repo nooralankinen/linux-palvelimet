@@ -43,7 +43,6 @@ RAM: 8GT
 Ennen Debianin latausta, latasin Oracle Virtual Boxin osoitteesta https://www.virtualbox.org/wiki/Downloads. 
 
 Asennuksen yhteydessä, järjestelmä herjasi että " Python core package and win32api are needed", ja että jos niitä ei asenna nyt, ne täytyy määrittää manuaalisesti jälkeenpäin. Jatkoin asennusta, ja ajattelin selvittää myöhemmin, mitä nämä olivat. 
-Tästä virheilmoituksesta ei harmillisesti ole aiemmin mainitusta syystä kuvaa. 
 Virtualboxin lataus sujui tämän jälkeen loppuun ilman ongelmia tai uusia viestejä.
  
 Asennusohjeen mukaisesti, menin seuraavaksi hakemaan Debianin latauspakettia osoitteesta  https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/.
