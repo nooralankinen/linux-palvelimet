@@ -1,0 +1,11 @@
+# h2 Komentaja Pingviini    
+
+## x) Lue ja tiivistä
+    $ sd = working directory, eli kansio jossa olet nyt
+    $ ls = list files, näyttää kansiossa olevat tiedostot
+    $ cd = change directory, siirry valikossa. Esim. $ cd home/ 
+    $ less = näytä tekstitiedoston sisältö. Esim. $ less kissa.txt
+      
+    $ pico TAI nano esimerkki.txt = uuden tekstitiedoston luonti. Tiedoston tallennus ja exit: CTRL-X y Enter . 
+
+      
