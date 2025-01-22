@@ -1,11 +1,51 @@
 # h2 Komentaja Pingviini    
 
-## x) Lue ja tiivistä
+# x) Lue ja tiivistä
+
     $ sd = working directory, eli kansio jossa olet nyt
-    $ ls = list files, näyttää kansiossa olevat tiedostot
+
+    $ ls = list files, näyttää kansiossa olevat tiedosto  
     $ cd = change directory, siirry valikossa. Esim. $ cd home/ 
     $ less = näytä tekstitiedoston sisältö. Esim. $ less kissa.txt
+
+    sivulla liikkuminen= Use space ” ” for next page, “q” to quit. “b” Moves backwards, slash “/” searches.
       
     $ pico TAI nano esimerkki.txt = uuden tekstitiedoston luonti. Tiedoston tallennus ja exit: CTRL-X y Enter . 
+    $ mkdir = uusi kansio. Esim. $mkdir kansio1
+    $ mv = siirrä tai uudelleennimeä
+    $ cp -r ORIGINAL COPY = kansion kopioiminen. Kansion sisällön kopioiminen: $ cp -r KANSIONNIMI/* KANSIOJOHONKOPIOIDAAN
 
+    $ sudo = unlimited priviledges
+    $ rm JUNK = poista tiedosto
+    $ rm -r FOLDEROFJUNK = poista koko kansio ja sen tiedostot
+
+    $ sudo apt-get update = näyttää saatavilla olevat päivitykset
+
+Kysymys: Miten kopioidaan kansion sisältö useisiin kansioihin? Eli kuten eilisessä tehtävässä, jossa kaikkiin (ma-su) kansioihin piti saada samat tekstitiedostot? Entä saako kansioita luotua kerralla useampia?
+
+
+# a) Micro
+
+Fyysinen kone: 
+Suoritin	11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz   3.11 GHz
+Asennettu RAM	8,00 Gt (7,70 Gt käytettävissä)
+Käyttöjärjestelmä	Windows 11 Home, 23H2
+Näytönohjain: Intel Iris Xe Graphics
+
+Virtualbox, Debian 64-bit
+
+
+Lähdin asentamaan micro -editoria keskiviikkona 22.1.2025 klo 10.40. Menin ensin verkkosivulle https://terokarvinen.com/, mutta etuvivulta ei heti löytynyt asennusohjetta, joten laitoin sivun oikean yläreunan hakupalkkiin hakusanoiksi "micro editor". 
+(hakutuloskuva)
+Klikkasin auki viimeisen hakutuloksen, joka äkkiseltään vaikutti osuvimmalta. Ja sieltä löytyikin ohje kyseisen ohjelman asentamiseen (https://terokarvinen.com/get-started-micro-editor/?fromSearch=micro%20editor).
+
+Avasin virtualboxin, ja sieltä Debianin. Syötin järjestelmän pyytämän salasanan päästäkseni kirjautumaan virtuaalikoneelle. 
+Työpöydän alareunasta klikkasin auki terminal emulatorin. 
+Hain ohjelmien viimeisimmät päivitykset komennolla $ sudo apt-get update.
+Sen jälkeen itse ohjelman asennuksen komennolla $ sudo apt-get -y install micro fzf exuberant-ctags.
+Asennuksen jälkeen halusin testata asennuksen toimivuutta. Avasin edellisellä tunnilla luodun kansion $ cd viikonpaivat/maanantai, sen jälkeen komento $ micro testausta.txt. 
+Ja micro-editori aukesi ruudulle. Ctrl + Q -y -komennolla ulos editorista. Eli editori toimi kuten pitikin. 
+
+
+    
       
