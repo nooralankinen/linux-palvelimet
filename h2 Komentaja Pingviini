@@ -64,7 +64,28 @@ Olin myös unohtanut hakea sovellusten uusimmat päivitykset, joten tein sen tä
 Tämän jälkeen toiveikkaana testasin ohjelmien asennusta uudestaan, samalla komennolla kuin aiemmin. Jos vaikka aiemmpi herja olisi johtunut siitä, kun päivitystä ei oltu tehty.
 Saman toiminnon suorittaminen johti kuitenkin (yllättäen) myös täysin samaan lopputulokseen. Selasin välissä Tero Karvisen ohjeistuksen komentorivikomennoista (https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited),
 mutta en ainakaan suoraan löytänyt sieltä vastausta ongelmaani. En oikein tiennyt, mitä tällaisessa tapauksessa pitäisi tehdä. Ps-mem -GitHub -sivu oli kolmisen vuotta vanha, joten kaiketi on myös mahdollista ettei kyseistä ohjelmaa enää ole?
-Jatkoin kuitenkin YouTuben videoiden selaamista, toivoen löytäväni sieltä lisää ratkaisuehdotuksia. 
+Jatkoin kuitenkin YouTuben videoiden selaamista, toivoen löytäväni sieltä lisää ratkaisuehdotuksia. Niitä ei kuitenkaan suoraa tullut, ja olin jo käyttänyt sen verran aikaa tähän asennukseen, että päätin luopua kunnianhimoisesta suunnitelmastani 
+saada kaikki kolme kerralla ladattua, ja tyytyisin kahteen. Komento $ sudo apt-get install -y ddgr asciinema. Ja tällä kertaa lataus onnistui ilman mitään herjoja. 
+Seuraavaksi klikkasin työpöydän alareunan File Managerin auki tarkastellakseni ladattuja tiedostoja. En tiennyt, mistä lähteä hakemaan tiedostoja, joten File Managerin hakukenttään 'ddgr', josta sitten löysin kyseisen ohjelman tiedostoja. Yhdessä kansioista (/usr/share/doc/ddgr/)
+löysin tiedoston readme.exe, jonka sisällä oli käyttöohjeet ko. ohjelmaan. Ohjeen perusteella menin takaisin terminaaliin, ja kirjoitin komennon $ ddgr kissa search. 
+Tämän jälkeen näkyviin avautui hakutuloksia kyseisestä hakusanasta. Eli ohjelma toimi kuten pitikin.
+
+(kuva ddgr-hakutulos)
+
+Äskeisen kokeilun perusteella kirjoitin seuraavaksi terminaaliin pelkän $ ascii. Sillä sain auki ohjeita ohjelman käyttöön.
+
+(kuva ascii-opening)
+
+Ohjeen perusteella kirjoitin $asciinema rec demo.cast -h, jolla sain tarkempia ohjeita tallennukseen. 
+$ asciinema rec viikonpaivat.maanantai tallennuksen aloitus
+testailin jotain
+exit -komennolla ulos
+tekstitiedosto File Managerissa.
+
+(kuva asciinema-testing)
+
+
+
 
 
 
