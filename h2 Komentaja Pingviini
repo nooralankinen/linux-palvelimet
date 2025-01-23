@@ -122,6 +122,9 @@ tiedot:
 
 (kuva rauta-listaus)
 
+"Running this in VirtualBox, we see an immediately interesting bit of information: lshw is aware that the system and bus is VirtualBox based. We also see that 8GiB of memory was assigned to this VM (Virtual Machine)."
+"Also importantly, we can see the Class of devices being listed, which is what we will use in our next lshw example.
+The device Class names used in lshw are straightforward and easy to remember; there is system, bus, memory, bridge, generic, multimedia, disk, input, volume, display, network, processor and potentially a few others."
 
 
 
