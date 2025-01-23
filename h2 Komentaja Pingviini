@@ -72,17 +72,61 @@ Tämän jälkeen näkyviin avautui hakutuloksia kyseisestä hakusanasta. Eli ohj
 
 (kuva ddgr-hakutulos)
 
-Äskeisen kokeilun perusteella kirjoitin seuraavaksi terminaaliin pelkän $ ascii. Sillä sain auki ohjeita ohjelman käyttöön.
+Äskeisen kokeilun perusteella kirjoitin seuraavaksi terminaaliin pelkän $ asciinema. Sillä sain auki ohjeita ohjelman käyttöön.
 
 (kuva ascii-opening)
 
-Ohjeen perusteella kirjoitin $asciinema rec demo.cast -h, jolla sain tarkempia ohjeita tallennukseen. 
-$ asciinema rec viikonpaivat.maanantai tallennuksen aloitus
-testailin jotain
-exit -komennolla ulos
-tekstitiedosto File Managerissa.
+Ohjeen perusteella kirjoitin komennon $ asciinema rec demo.cast -h, jolla sain tarkempia ohjeita tallennukseen. 
+Aloitin tallennuksen $ asciinema rec viikonpaivat.maanantai :lla, ja tallensin tiedostoon osan ohjeistuksia. Sen jälkeen $ exit -komennolla pois
+tallennustilasta. Löysin tallennetun tiedoston aiemmin kurssilla luodusta viikonpaivat -kansiosta. Eli tämänkin näyttäisi toimivan luvatusti.
 
 (kuva asciinema-testing)
+
+Koska kolmannen softan kanssa oli ongelmia, päädyin lataamaan sen tilalle lolcat:in (https://www.tecmint.com/lolcat-color-output-linux-terminal/). Asennus sujui, jonka jälkeen testasin ohjelmaa hakemalla sovelluksien uusimmat päivitykset $ sudo apt-get update -komennolla.
+
+(Lisää kuva lolcat-testing).
+
+# c) FHS
+
+Root directoryyn siirryin komennolla $ cd / , ja siellä olevan sisällön sain näkyville komennolla $ ls. Siirryin kansioon bin, komennolla $ cd bin. Ja taas kansion sisältö näkyviin $ ls -komennolla.
+
+(kuva fhs1 - 7)
+
+# d) The Friendly M
+
+Luin terminaalista ohjeen komennolla $ man grep. Ihan en kuitenkaan hahmottanut sen perusteella tämän ohjelman toimintaa, joten googletin vielä "grep linux". Ensimmäisessä hakutuloksessa (https://www.howtogeek.com/496056/how-to-use-the-grep-command-on-linux/) olikin jo kattavasti selitettynä esimerkkikomennoilla
+kyseisen komennon käytöstä. 
+
+Hain luomastani viikonpaivat -kansiosta alikansion keskiviikko, ja sieltä tekstidokumentista kilppari.txt sanaa "asd":
+
+(kuva grep1)
+
+Toinen grep -testaus oli etsiä tiedostosta viikonpaivat.maanantai, montako 'i' -kirjainta tiedostossa esiintyi:
+
+(grep2 kuva)
+
+
+# e) Pipe
+
+Pipe esiintyi jo aiemmin tehtävässä b. lolcatin testauksen yhteydessä, mutta otetaan tähän vielä toinen esimerkki. 
+
+$ ls viikonpaivat -komennolla näytetään alikansiot maanantaista sunnuntaihin, samalla rivillä. Mutta komennolla $ ls viikonpaivat | less, näkymä onkin seuraavanlainen, kun jokainen alikansio on omalla rivillään:
+
+(kuva pipe1)
+
+
+# f) Rauta
+
+Yritin lähteä suoraa liikenteeseen komennolla $ sudo lshw -short -sanitize, mutta tuli herja "sudo : lshw : command not found. Oletin tämän tarkoittavan, että lshw täytyy silloin asentaa. $ sudo apt-get install -y lshw. Sen jälkeen komento listasi alla olevat 
+tiedot: 
+
+(kuva rauta-listaus)
+
+
+
+
+
+
 
 
 
