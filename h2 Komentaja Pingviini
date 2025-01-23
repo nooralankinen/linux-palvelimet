@@ -47,5 +47,26 @@ Asennuksen jälkeen halusin testata asennuksen toimivuutta. Avasin edellisellä 
 Ja micro-editori aukesi ruudulle. Ctrl + Q -y -komennolla ulos editorista. Eli editori toimi kuten pitikin. 
 
 
+# b) Apt
+
+Aloitin tämän tehtävän torstaina 23.1 klo 13.06. Lähdin ensin etsimään tietoa eri ohjelmista, joita voisin tähän harjoitukseen käyttää. En tiennyt etukäteen yhtäkään Linux -ohjelmaa, joten menin Gooleen (https://google.com) ja kirjoitin hakuun "linux cli program". Hakutuloksista valitsin sivun (https://www.linuxlinks.com/100-great-must-have-cli-linux-applications/),
+jolla listattiin hyödyllisiä Linuxin cli-ohjelmia. Valitsin kokeiltaviksi nohjelmat ps_mem (https://github.com/pixelb/ps_mem), ddgr (https://github.com/jarun/ddgr) ja asciinema (https://asciinema.org/). 
+Tehtävän lopussa oli kysymys, osaanko asentaa kaikki kolme ohjelmaa samalla kertaa. En tietenkään etukäteen osannut, mutta siihenkin löytyi ohje YouTubesta hakusanoilla "linux apt-get install several programs", Roel Van Der Paarin video (Ubuntu: Apt-get install multiple packages without stopping (2 Solutions!!)).
+Videolta sain komennon $ sudo apt-get install ohjelma1 ohjelma2 ohjelma3. 
+Kirjauduin virtualboxiin ja avasin etusivun alareunasta terminal emulatorin. Siellä näkyi vielä edellisen päivän micron asennus, ja huomasin että tuossa YouTubesta saamassa komentokehotteessa ei ollut tuota '-y'sanojen install ja ohjelman nimen välissä, ja päätin sen sinne lisätä.
+Annoin siis terminaalissa komennon $ sudo apt-get install -y ps-mem ddgr asciinema. 
+Vastaukseksi sain virheilmoituksen, jonka mukaan ensimmäistä ensimmäistä asennuspakettia ps-mem ei löytynyt. 
+
+(lisää asennusongelma 1 -kuva) 
+
+Jatkoin videon katsomista, ja siinä neuvottiin myös kaksi tapaa toimia, mikäli asennus lakkaa sen vuoksi että jokin paketeista ei löydy. Ensimmäisen kohdalla tosin oli varoitus, että toiminto voi myös rikkoa koneen. Päätin jättää sen kokeilematta. 
+Olin myös unohtanut hakea sovellusten uusimmat päivitykset, joten tein sen tässä välissä, kun kerran asennuskaan ei onnistunut. Eli komennolla $ sudo apt-get update.
+Tämän jälkeen toiveikkaana testasin ohjelmien asennusta uudestaan, samalla komennolla kuin aiemmin. Jos vaikka aiemmpi herja olisi johtunut siitä, kun päivitystä ei oltu tehty.
+Saman toiminnon suorittaminen johti kuitenkin (yllättäen) myös täysin samaan lopputulokseen. Selasin välissä Tero Karvisen ohjeistuksen komentorivikomennoista (https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited),
+mutta en ainakaan suoraan löytänyt sieltä vastausta ongelmaani. En oikein tiennyt, mitä tällaisessa tapauksessa pitäisi tehdä. Ps-mem -GitHub -sivu oli kolmisen vuotta vanha, joten kaiketi on myös mahdollista ettei kyseistä ohjelmaa enää ole?
+Jatkoin kuitenkin YouTuben videoiden selaamista, toivoen löytäväni sieltä lisää ratkaisuehdotuksia. 
+
+
+
     
       
