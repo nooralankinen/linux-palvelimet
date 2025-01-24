@@ -36,7 +36,9 @@ Virtualbox, Debian 64-bit
 
 
 Lähdin asentamaan micro -editoria keskiviikkona 22.1.2025 klo 10.40. Menin ensin verkkosivulle https://terokarvinen.com/, mutta etuvivulta ei heti löytynyt asennusohjetta, joten laitoin sivun oikean yläreunan hakupalkkiin hakusanoiksi "micro editor". 
-(hakutuloskuva)
+
+![Add file: Upload](haku-terokarvinen.com.png)
+
 Klikkasin auki viimeisen hakutuloksen, joka äkkiseltään vaikutti osuvimmalta. Ja sieltä löytyikin ohje kyseisen ohjelman asentamiseen (https://terokarvinen.com/get-started-micro-editor/?fromSearch=micro%20editor).
 
 Avasin virtualboxin, ja sieltä Debianin. Syötin järjestelmän pyytämän salasanan päästäkseni kirjautumaan virtuaalikoneelle. 
@@ -44,7 +46,7 @@ Työpöydän alareunasta klikkasin auki terminal emulatorin.
 Hain ohjelmien viimeisimmät päivitykset komennolla $ sudo apt-get update.
 Sen jälkeen itse ohjelman asennuksen komennolla $ sudo apt-get -y install micro fzf exuberant-ctags.
 
-![Add file: Upload](micron-asennus.png)
+![Add file: Upload](micron_asennus.png)
 
 Asennuksen jälkeen halusin testata asennuksen toimivuutta. Avasin edellisellä tunnilla luodun kansion $ cd viikonpaivat/maanantai, sen jälkeen komento $ micro testausta.txt. 
 Ja micro-editori aukesi ruudulle. Ctrl + Q -y -komennolla ulos editorista. Eli editori toimi kuten pitikin. 
@@ -95,12 +97,30 @@ Koska kolmannen softan kanssa oli ongelmia, päädyin lataamaan sen tilalle lolc
 Root directoryyn siirryin komennolla $ cd / , ja siellä olevan sisällön sain näkyville komennolla $ ls. Siirryin kansioon bin, komennolla $ cd bin. Ja taas kansion sisältö näkyviin $ ls -komennolla.
 
 ![Add file: Upload](fsh_1.png)
+
+/home
+
 ![Add file: Upload](fhs2.png)
+
+/home/nooral
+
 ![Add file: Upload](fhs3.png)
+
+/etc/
+
 ![Add file: Upload](fhs4.png)
+
+/media/
+
+(kansio on tyhjä)
+
 ![Add file: Upload](fhs5.png)
-![Add file: Upload](fhs6.png)
+
+/var/log
+
 ![Add file: Upload](fhs7.png)
+
+![Add file: Upload](fhs6.png)
 
 
 # d) The Friendly M
