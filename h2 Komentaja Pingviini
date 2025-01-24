@@ -43,6 +43,9 @@ Avasin virtualboxin, ja sieltä Debianin. Syötin järjestelmän pyytämän sala
 Työpöydän alareunasta klikkasin auki terminal emulatorin. 
 Hain ohjelmien viimeisimmät päivitykset komennolla $ sudo apt-get update.
 Sen jälkeen itse ohjelman asennuksen komennolla $ sudo apt-get -y install micro fzf exuberant-ctags.
+
+![Add file: Upload](micron-asennus.png)
+
 Asennuksen jälkeen halusin testata asennuksen toimivuutta. Avasin edellisellä tunnilla luodun kansion $ cd viikonpaivat/maanantai, sen jälkeen komento $ micro testausta.txt. 
 Ja micro-editori aukesi ruudulle. Ctrl + Q -y -komennolla ulos editorista. Eli editori toimi kuten pitikin. 
 
@@ -118,13 +121,47 @@ $ ls viikonpaivat -komennolla näytetään alikansiot maanantaista sunnuntaihin,
 # f) Rauta
 
 Yritin lähteä suoraa liikenteeseen komennolla $ sudo lshw -short -sanitize, mutta tuli herja "sudo : lshw : command not found. Oletin tämän tarkoittavan, että lshw täytyy silloin asentaa. $ sudo apt-get install -y lshw. Sen jälkeen komento listasi alla olevat 
-tiedot: 
+tiedot virtuaalikoneen hardwaresta: 
 
 (kuva rauta-listaus)
 
-"Running this in VirtualBox, we see an immediately interesting bit of information: lshw is aware that the system and bus is VirtualBox based. We also see that 8GiB of memory was assigned to this VM (Virtual Machine)."
-"Also importantly, we can see the Class of devices being listed, which is what we will use in our next lshw example.
-The device Class names used in lshw are straightforward and easy to remember; there is system, bus, memory, bridge, generic, multimedia, disk, input, volume, display, network, processor and potentially a few others."
+Listauksesta näkyy, että sekä järjestelmänä että bussina on Virtual Box. 
+Välimuistia on käytössä yhteensä 128 kilotavua.
+Suoritin on sama kuin fyysisen koneen suoritin, 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz 3.11 GHz.
+RAM-muistia on vain 2 gigabittiä. Se on melko vähän, mutta periaatteessa pitäisi riittää tämän kurssin vaatimuksiin. Samoin tallennustila 64GB. Molempia saa toki tarvittaessa lisättyä. 
+Näytönohjaimena on VirtualBox SVGA II Adapter, PCI bridgenä puolestaan 440FX - 82441FX PM. 
+
+Päätin kuitenkin varmuuden vuoksi hieman lisätä RAM-muistia, ja pyysin siihen ohjeet ChatGPT:ltä (https://chatgpt.com/c/67938214-1ba4-800d-952e-02c1099efecd).
+Ohjeen mukaisesti sammutin virtuaalikoneen. Sen jälkeen avasin VirtualBoxin, ja klikkasin hiiren oikealla painikkeella vasemmassa reunassa olevan virtuaalikoneen päällä. Aukeavasta valikosta 'Settings' -> 'System'. 'Motherboard' -välilehti oli jo auki, ja säädin muistin 
+kohtaan 3005MB, ja klikkasin alta 'ok'-kuvaketta.
+
+(kuva RAM-lisays)
+
+Tämän jälkeen avasin virtuaalikoneen uudelleen, ja hain koneen tiedot uudelleen samalla $ sudo lshw -short -sanitize -komennolla. Ja nyt RAM olikin 3GB. 
+
+(kuva RAM-lopputulos)
+
+
+## Lähteet
+
+ChatGPT: https://chatgpt.com/c/67938214-1ba4-800d-952e-02c1099efecd
+
+Tero Karvinen 2024, Command Line Basics Revisited: https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited
+
+Tero Karvinen, Get Started Micro Editor: https://terokarvinen.com/get-started-micro-editor/?fromSearch=micro%20editor
+
+HowToGeek, How To Use Grep Command On Linux: https://www.howtogeek.com/496056/how-to-use-the-grep-command-on-linux/
+
+Roel Van Der Paar 2021, Ubuntu: Apt-get install multiple packages without stopping (2 Solutions!!): https://www.youtube.com/watch?v=gaZYYApnW8I
+
+Ddgr : https://github.com/jarun/ddgr
+
+Asciinema: https://asciinema.org/
+
+Lolcat: https://www.tecmint.com/lolcat-color-output-linux-terminal/
+
+
+
 
 
 
