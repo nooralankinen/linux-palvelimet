@@ -60,40 +60,48 @@ Kirjauduin virtualboxiin ja avasin etusivun alareunasta terminal emulatorin. Sie
 Annoin siis terminaalissa komennon $ sudo apt-get install -y ps-mem ddgr asciinema. 
 Vastaukseksi sain virheilmoituksen, jonka mukaan ensimmäistä ensimmäistä asennuspakettia ps-mem ei löytynyt. 
 
-(lisää asennusongelma 1 -kuva) 
+![Add file: Upload](asennusongelma1.png)
 
 Jatkoin videon katsomista, ja siinä neuvottiin myös kaksi tapaa toimia, mikäli asennus lakkaa sen vuoksi että jokin paketeista ei löydy. Ensimmäisen kohdalla tosin oli varoitus, että toiminto voi myös rikkoa koneen. Päätin jättää sen kokeilematta. 
 Olin myös unohtanut hakea sovellusten uusimmat päivitykset, joten tein sen tässä välissä, kun kerran asennuskaan ei onnistunut. Eli komennolla $ sudo apt-get update.
 Tämän jälkeen toiveikkaana testasin ohjelmien asennusta uudestaan, samalla komennolla kuin aiemmin. Jos vaikka aiemmpi herja olisi johtunut siitä, kun päivitystä ei oltu tehty.
 Saman toiminnon suorittaminen johti kuitenkin (yllättäen) myös täysin samaan lopputulokseen. Selasin välissä Tero Karvisen ohjeistuksen komentorivikomennoista (https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited),
-mutta en ainakaan suoraan löytänyt sieltä vastausta ongelmaani. En oikein tiennyt, mitä tällaisessa tapauksessa pitäisi tehdä. Ps-mem -GitHub -sivu oli kolmisen vuotta vanha, joten kaiketi on myös mahdollista ettei kyseistä ohjelmaa enää ole?
+mutta en ainakaan suoraan löytänyt sieltä vastausta ongelmaani. En oikein tiennyt, mitä tällaisessa tapauksessa pitäisi tehdä. Ps-mem -GitHub -sivu oli kolmisen vuotta vanha, joten kaiketi on myös mahdollista ettei kyseistä ohjelmaa enää ole.
 Jatkoin kuitenkin YouTuben videoiden selaamista, toivoen löytäväni sieltä lisää ratkaisuehdotuksia. Niitä ei kuitenkaan suoraa tullut, ja olin jo käyttänyt sen verran aikaa tähän asennukseen, että päätin luopua kunnianhimoisesta suunnitelmastani 
-saada kaikki kolme kerralla ladattua, ja tyytyisin kahteen. Komento $ sudo apt-get install -y ddgr asciinema. Ja tällä kertaa lataus onnistui ilman mitään herjoja. 
+saada kaikki kolme kerralla ladattua, ja tyytyisin kahteen asennukseen kerralla. Komento $ sudo apt-get install -y ddgr asciinema. Ja tällä kertaa lataus onnistui ilman mitään herjoja. 
 Seuraavaksi klikkasin työpöydän alareunan File Managerin auki tarkastellakseni ladattuja tiedostoja. En tiennyt, mistä lähteä hakemaan tiedostoja, joten File Managerin hakukenttään 'ddgr', josta sitten löysin kyseisen ohjelman tiedostoja. Yhdessä kansioista (/usr/share/doc/ddgr/)
 löysin tiedoston readme.exe, jonka sisällä oli käyttöohjeet ko. ohjelmaan. Ohjeen perusteella menin takaisin terminaaliin, ja kirjoitin komennon $ ddgr kissa search. 
 Tämän jälkeen näkyviin avautui hakutuloksia kyseisestä hakusanasta. Eli ohjelma toimi kuten pitikin.
 
-(kuva ddgr-hakutulos)
+![Add file: Upload](ddgr-testaus.png)
 
 Äskeisen kokeilun perusteella kirjoitin seuraavaksi terminaaliin pelkän $ asciinema. Sillä sain auki ohjeita ohjelman käyttöön.
 
-(kuva ascii-opening)
+![Add file: Upload](ascii-opening.png)
 
 Ohjeen perusteella kirjoitin komennon $ asciinema rec demo.cast -h, jolla sain tarkempia ohjeita tallennukseen. 
 Aloitin tallennuksen $ asciinema rec viikonpaivat.maanantai :lla, ja tallensin tiedostoon osan ohjeistuksia. Sen jälkeen $ exit -komennolla pois
 tallennustilasta. Löysin tallennetun tiedoston aiemmin kurssilla luodusta viikonpaivat -kansiosta. Eli tämänkin näyttäisi toimivan luvatusti.
 
-(kuva asciinema-testing)
+![Add file: Upload](ascii-testing.png)
 
 Koska kolmannen softan kanssa oli ongelmia, päädyin lataamaan sen tilalle lolcat:in (https://www.tecmint.com/lolcat-color-output-linux-terminal/). Asennus sujui, jonka jälkeen testasin ohjelmaa hakemalla sovelluksien uusimmat päivitykset $ sudo apt-get update -komennolla.
 
-(Lisää kuva lolcat-testing).
+![Add file: Upload](lolcat-testing.png)
+
 
 # c) FHS
 
 Root directoryyn siirryin komennolla $ cd / , ja siellä olevan sisällön sain näkyville komennolla $ ls. Siirryin kansioon bin, komennolla $ cd bin. Ja taas kansion sisältö näkyviin $ ls -komennolla.
 
-(kuva fhs1 - 7)
+![Add file: Upload](fsh_1.png)
+![Add file: Upload](fhs2.png)
+![Add file: Upload](fhs3.png)
+![Add file: Upload](fhs4.png)
+![Add file: Upload](fhs5.png)
+![Add file: Upload](fhs6.png)
+![Add file: Upload](fhs7.png)
+
 
 # d) The Friendly M
 
@@ -102,11 +110,11 @@ kyseisen komennon käytöstä.
 
 Hain luomastani viikonpaivat -kansiosta alikansion keskiviikko, ja sieltä tekstidokumentista kilppari.txt sanaa "asd":
 
-(kuva grep1)
+![Add file: Upload](grep1.png)
 
 Toinen grep -testaus oli etsiä tiedostosta viikonpaivat.maanantai, montako 'i' -kirjainta tiedostossa esiintyi:
 
-(grep2 kuva)
+![Add file: Upload](grep2.png)
 
 
 # e) Pipe
@@ -115,7 +123,7 @@ Pipe esiintyi jo aiemmin tehtävässä b. lolcatin testauksen yhteydessä, mutta
 
 $ ls viikonpaivat -komennolla näytetään alikansiot maanantaista sunnuntaihin, samalla rivillä. Mutta komennolla $ ls viikonpaivat | less, näkymä onkin seuraavanlainen, kun jokainen alikansio on omalla rivillään:
 
-(kuva pipe1)
+![Add file: Upload](pipe1.png)
 
 
 # f) Rauta
@@ -123,10 +131,10 @@ $ ls viikonpaivat -komennolla näytetään alikansiot maanantaista sunnuntaihin,
 Yritin lähteä suoraa liikenteeseen komennolla $ sudo lshw -short -sanitize, mutta tuli herja "sudo : lshw : command not found. Oletin tämän tarkoittavan, että lshw täytyy silloin asentaa. $ sudo apt-get install -y lshw. Sen jälkeen komento listasi alla olevat 
 tiedot virtuaalikoneen hardwaresta: 
 
-(kuva rauta-listaus)
+![Add file: Upload](rauta-listaus.png)
 
-Listauksesta näkyy, että sekä järjestelmänä että bussina on Virtual Box. 
-Välimuistia on käytössä yhteensä 128 kilotavua.
+Listauksesta näkyy, että sekä järjestelmänä että bussina toimii Virtual Box. 
+Välimuistia BIOS:illa on käytössä yhteensä 128 kilotavua.
 Suoritin on sama kuin fyysisen koneen suoritin, 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz 3.11 GHz.
 RAM-muistia on vain 2 gigabittiä. Se on melko vähän, mutta periaatteessa pitäisi riittää tämän kurssin vaatimuksiin. Samoin tallennustila 64GB. Molempia saa toki tarvittaessa lisättyä. 
 Näytönohjaimena on VirtualBox SVGA II Adapter, PCI bridgenä puolestaan 440FX - 82441FX PM. 
@@ -135,11 +143,11 @@ Päätin kuitenkin varmuuden vuoksi hieman lisätä RAM-muistia, ja pyysin siihe
 Ohjeen mukaisesti sammutin virtuaalikoneen. Sen jälkeen avasin VirtualBoxin, ja klikkasin hiiren oikealla painikkeella vasemmassa reunassa olevan virtuaalikoneen päällä. Aukeavasta valikosta 'Settings' -> 'System'. 'Motherboard' -välilehti oli jo auki, ja säädin muistin 
 kohtaan 3005MB, ja klikkasin alta 'ok'-kuvaketta.
 
-(kuva RAM-lisays)
+![Add file: Upload](RAM-lisays.png)
 
 Tämän jälkeen avasin virtuaalikoneen uudelleen, ja hain koneen tiedot uudelleen samalla $ sudo lshw -short -sanitize -komennolla. Ja nyt RAM olikin 3GB. 
 
-(kuva RAM-lopputulos)
+![Add file: Upload](RAM-lopputulos.png)
 
 
 
