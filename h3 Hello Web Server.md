@@ -19,8 +19,7 @@ Testasin, että default page toimii selaimessa
 
 (kuva loki2901)
 
-Ensimmäisenä lokimerkinnässä näkyy clientin IP-osoite 127.0.0.1. , ja sen jälkeen kyseisen tapahtumahetken aikaleima. "GET / HTTP/1.1" 304 247 on komento, jota palvelin lähtee suorittamaan. GET toiminto kertoo, että kyseessä on HTTP, ja 1.1 on protokollaversio. 
-304 247
+Ensimmäisenä lokimerkinnässä näkyy nk. "loopback" IP-osoite 127.0.0.1., koska pyyntö tehtiin samalta koneelta. Sitä seuraa kyseisen tapahtumahetken aikaleima. "GET /favicon.ico HTTP/1.1"  on komento, jota palvelin lähtee suorittamaan. GET toiminto kertoo, että kyseessä on HTTP ja 1.1 on protokollaversio, favicon.ico on sivu jota pyydettiin. 404 on HTTP statuskoodi (tiedostoa ei löydy), ja 487 on vastauksen koko bitteinä. Pyyntö tuli sivulta http://localhost, ja Linux x86_64 koneelta jolla käytössä Firefox 128.0 -selain. 
 
 
 
@@ -50,8 +49,17 @@ Seuraavaksi loin uudella etusivulla näytettävän tiedoston
 
   /kuva virhe-juukelis)
 
-  Avasin 
+  Avasin :
 
+nooral@noora-virtualbox:/etc/apache2/sites-available$ ls
+000-default.conf  default-ssl.conf  juukelispuukelis.example.com.conf
+nooral@noora-virtualbox:/etc/apache2/sites-available$ sudo a2dissite 000-default.conf
+[sudo] password for nooral: 
+Site 000-default disabled.
+To activate the new configuration, you need to run:
+  systemctl reload apache2
+
+tämän jälkeen toimi. 
 
 
 
@@ -66,3 +74,5 @@ Seuraavaksi loin uudella etusivulla näytettävän tiedoston
   # Lähteet:
 
   Loggly, Linux Logging Basics: https://www.loggly.com/ultimate-guide/linux-logging-basics/
+
+  Signoz, Complete Guide To Apache Logs: https://signoz.io/guides/apache-log/
