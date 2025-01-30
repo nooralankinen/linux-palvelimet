@@ -47,19 +47,13 @@ Seuraavaksi loin uudella etusivulla näytettävän tiedoston
 
   sekä selaimessa. Selaimessa localhost -sivu näkyi edelleen, mutta sivu http://juukelispuukelis.example.com antoi seuraavan virheilmoituksen: 
 
-  /kuva virhe-juukelis)
+  /kuva error-hattu)
 
-  Avasin :
+Mitään viestejä ei kuitenkaan näkynyt error.lokista, tai access.lokista. Tarkistin komennolla $ sudo systemctl status apache2 näkyykö mitään erikoista, ja sieltä löytyikin seuraava virheilmoitus:
 
-nooral@noora-virtualbox:/etc/apache2/sites-available$ ls
-000-default.conf  default-ssl.conf  juukelispuukelis.example.com.conf
-nooral@noora-virtualbox:/etc/apache2/sites-available$ sudo a2dissite 000-default.conf
-[sudo] password for nooral: 
-Site 000-default disabled.
-To activate the new configuration, you need to run:
-  systemctl reload apache2
+(kuva hattu-server-error)
 
-tämän jälkeen toimi. 
+
 
 
 
