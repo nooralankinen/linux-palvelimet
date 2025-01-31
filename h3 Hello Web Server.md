@@ -4,6 +4,13 @@
 
 # a) Apache2 -asennus
 
+Fyysinen kone: Suoritin 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz 3.11 GHz
+Asennettu RAM 8,00 Gt (7,70 Gt käytettävissä) 
+Käyttöjärjestelmä Windows 11 Home, 23H2 Näytönohjain: Intel Iris Xe Graphics
+
+Oracle Virtualbox Version 7.1.4 r165100 (Qt6.5.3)
+Debian Live 12.9.0, amd64-xfce
+
 Päivitys $sudo apt-get update:lla. 
 Apache 2 asensin jo tunnilla 28.1 klo 17.40 alkaen, komennoilla  
 
@@ -76,6 +83,35 @@ Ja näkymä sivulla on:
 (kuva hattu-final)
 
 
+# f) Anna esimerkit 'curl -I' ja 'curl' -komennoista
+
+cURL -toiminto hakee dataa verkosta serverin kautta.
+Ensin hain tietoja komennolla '$ culr localhost'
+
+(kuva curl-localhost)
+
+komento 'curl -I (verkkosivu)' puolestaan näyttää haetun sivun serveriltä vastauksena tullutta sivun metadataa, kuten vaikkapa statuskoodin, sisällön tyypin, välimuistin ja evästeet. 
+Ensiksi tein haun osoitteella www.haaga-helia.fi:
+
+( kuva curl-I1)
+
+Ja tiedoista näemme, että yhteytenä käytetään HTTP -protokollan versiota 1.1. Statuskoodi on 301, eli sivu on siirtynyt pysyvästi. URL uudelleenohjaa sivun oikeaan osoitteeseen, mutta pelkkä cURL -toiminto ei pysty automaattisesti seuraamaan tätä uudelleenohjausta. 
+Seuraavaksi haku osoitteella www.hs.fi:
+
+(kuva curl-I2)
+
+Ja itseasiassa tämän sivun kanssa on melko sama alku, eli tämäkin sivu oodelleenohautuu, eikä cURL -komento ole pystynyt seuraamaan sitä uuteen osoitteeseen. 
+
+
+# m) Hanki GitHub Education -paketti.
+
+En tiennyt tarkalleen, mitä kyseinen paketti sisältää, eli googlasin ensiksi kyseisen paketin. 
+Hakutuloksissa heti toisena olikin GitHubin oma sivu, jossa asiaa esiteltiin (https://github.com/education). 
+Etusivulta klikkasin kuvaketta 'Join GitHub Education', ja päädyin sivulle https://education.github.com/discount_requests/application .
+Valitsin rooliksi 'Student', ja kävin sivulla olevan tarkistuslistan läpi. 
+
+
+
 
 
     
@@ -104,3 +140,5 @@ Ja näkymä sivulla on:
   Signoz, Complete Guide To Apache Logs: https://signoz.io/guides/apache-log/
 
   Simplified Guide, How to show HTTP response headers in cURL: https://www.simplified.guide/curl/headers-response-show
+
+  GitHub Education, https://github.com/education
