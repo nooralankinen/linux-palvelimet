@@ -109,6 +109,11 @@ En tiennyt tarkalleen, mitä kyseinen paketti sisältää, eli googlasin ensiksi
 Hakutuloksissa heti toisena olikin GitHubin oma sivu, jossa asiaa esiteltiin (https://github.com/education). 
 Etusivulta klikkasin kuvaketta 'Join GitHub Education', ja päädyin sivulle https://education.github.com/discount_requests/application .
 Valitsin rooliksi 'Student', ja kävin sivulla olevan tarkistuslistan läpi. 
+Lisäsin koulun sähköpostiosoitteen olemassaolevalle GitHub -profiililleni, jonka jälkeen osoite piti vielä vahvistaa sähköpostiin saapuneen viestin linkin kautta. 
+
+# o) Vapaaehtoinen, kaksi web-sivua. 
+
+
 
 
 
