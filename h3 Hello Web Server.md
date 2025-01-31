@@ -19,7 +19,7 @@ Apache 2 asensin jo tunnilla 28.1 klo 17.40 alkaen, komennoilla
 
 Testasin, että default page toimii selaimessa
 
-![Add file: Upload](default-page.png)
+![Add file: Upload](Default-page.png)
 
 
 # b. Loki
