@@ -19,7 +19,7 @@ Apache 2 asensin jo tunnilla 28.1 klo 17.40 alkaen, komennoilla
 
 Testasin, että default page toimii selaimessa
 
-(kuva default-page)
+![Add file: Upload](default-page.png)
 
 
 # b. Loki
@@ -39,7 +39,7 @@ Seuraavaksi loin uuden Name Based Virtual Hostin,
     
 ... ja konfiguroin sille kuvan mukaiset asetukset.
 
-(kuva conf-dns)
+![Add file: Upload](conf-dns.png)
 
 Enablasin sivun ja uudelleenkäynnistin virtuaalikoneen
 
@@ -53,7 +53,7 @@ Seuraavaksi loin uudella etusivulla näytettävän tiedoston
 
   Tämän jälkeen testasin toimivuutta esin terminaalissa
 
-  (kuva hattu-testing)
+  ![Add file: Upload](hattu-testing.png)
 
   sekä selaimessa. Selaimessa localhost -sivu näkyi edelleen. 
 
@@ -80,7 +80,7 @@ Ja sisältö on seuraava:
 
 Ja näkymä sivulla on: 
 
-(kuva hattu-final)
+![Add file: Upload](hattu-final.png)
 
 
 # f) Anna esimerkit 'curl -I' ja 'curl' -komennoista
@@ -88,17 +88,17 @@ Ja näkymä sivulla on:
 cURL -toiminto hakee dataa verkosta serverin kautta.
 Ensin hain tietoja komennolla '$ culr localhost'
 
-(kuva curl-localhost)
+![Add file: Upload](curl-localhost.png)
 
 komento 'curl -I (verkkosivu)' puolestaan näyttää haetun sivun serveriltä vastauksena tullutta sivun metadataa, kuten vaikkapa statuskoodin, sisällön tyypin, välimuistin ja evästeet. 
 Ensiksi tein haun osoitteella www.haaga-helia.fi:
 
-( kuva curl-I1)
+![Add file: Upload](curl-I1.png)
 
 Ja tiedoista näemme, että yhteytenä käytetään HTTP -protokollan versiota 1.1. Statuskoodi on 301, eli sivu on siirtynyt pysyvästi. URL uudelleenohjaa sivun oikeaan osoitteeseen, mutta pelkkä cURL -toiminto ei pysty automaattisesti seuraamaan tätä uudelleenohjausta. 
 Seuraavaksi haku osoitteella www.hs.fi:
 
-(kuva curl-I2)
+![Add file: Upload](curl-I2.png)
 
 Ja itseasiassa tämän sivun kanssa on melko sama alku, eli tämäkin sivu oodelleenohautuu, eikä cURL -komento ole pystynyt seuraamaan sitä uuteen osoitteeseen. 
 
