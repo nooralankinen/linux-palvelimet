@@ -109,15 +109,15 @@ Seuraavaksi loin uudella etusivulla näytettävän tiedoston
 
 Ja sisältö on seuraava:
 
-    <!doctype html>
-    <html>
+     <!doctype html>
+    <html lang="fi">
     <head>
-        <title>hattu.example.com</title>
-        <meta charset="utf-8" />
+    <title>hattu.example.com</title>
+    <meta charset="utf-8">
     </head>
     <body>
-        <h1>Nooran oma sivu</h1>
-        <p>Tervetuloa osoitteeseen hattu.example.com. Tämän sivun näkymisen eteen on vuodatettu lukuisia tunteja verta, hikeä ja kyyneleitä. >
+    <h1>Nooran oma sivu</h1>
+    <p>Tervetuloa osoitteeseen hattu.example.com. Tämän sivun näkymisen eteen on vuodatettu lukuisia tunteja verta, hikeä ja kyyneleitä. >
     </body>
     </html>
 
