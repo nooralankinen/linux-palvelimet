@@ -2,6 +2,49 @@
 
 ## Apache Name-based Virtual Host Support
 
+- Name-based hosting perustuu asiakkaan pyytämään HTTP -osoitteeseen, ei IP-osoitteeseen.
+- 
+- mahdollistaa sen, että useat verkkosivustot voivat käyttää samaa IP-osoitetta.
+- 
+- myös name-based hosting aloitetaan ensin IP-resoluutiolla, jossa määritetään parhaiten pyyntöä vastaava virtuaalihost.
+- 
+- Käyttöönotto: Määritä ensin Virtual Host jokaiselle käyttäjälle, jota haluat palvella. Virtual Host -blokin sisään määritetään vähintäänkin server name, sekä document root, josta sivun tiedot haetaan.
+- 
+- Samaan konfigurointitiedostoon voidaan lisätä useampi domain.
+- 
+- ServerAlias -määrittelyllä voidaan lisätä vaihtoehtoisia kirjoitustapoja osoitteelle.
+
+  
+
+## Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address
+
+-Asenna ja konfiguro web serveri: $ sudo apt-get -y install apache2
+$ echo "Default"|sudo tee /var/www/html/index.html
+
+-lisää uusi virtual host: $ sudoedit /etc/apache2/sites-available/pyora.example.com.conf
+<VirtualHost *:80>
+ ServerName pyora.example.com
+ ServerAlias www.pyora.example.com
+ DocumentRoot /home/xubuntu/publicsites/pyora.example.com
+ <Directory /home/xubuntu/publicsites/pyora.example.com>
+   Require all granted
+ </Directory>
+</VirtualHost>
+
+-ota uusi sivu käyttöön: $ sudo a2ensite pyora.example.com
+
+-restarttaa Apache
+
+-Luo webbisivun root -tiedosto ja sen sisältö:
+$ mkdir -p /home/xubuntu/publicsites/pyora.example.com/
+$ echo pyora > /home/xubuntu/publicsites/pyora.example.com/index.html
+
+-Testaa: 
+$ curl -H 'Host: pyora.example.com' localhost
+$ curl localhost
+
+
+
 # a) Apache2 -asennus
 
 Fyysinen kone: Suoritin 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz 3.11 GHz
@@ -113,20 +156,40 @@ Lisäsin koulun sähköpostiosoitteen olemassaolevalle GitHub -profiililleni, jo
 
 # o) Vapaaehtoinen, kaksi web-sivua. 
 
+Lähdin ensin luomaan root -tiedostoja verkkosivuille, ja niihin molempiin index.html -tekstitiedostot. 
+
+       $ sudo mkdir -p /var/www/foo.example.com
+       $ sudo mkdir -p /var/www/bar.example.com
+
+Sen jälkeen loin uuden virtual host -määrityksen näille molemmille:
+
+        $ sudoedit /etc/apache2/sites-available/foo.example.com.conf
 
 
+(kuva virtual-hosts)
 
+Tämän jälkeen testasin komennolla curl -H 'Host: foo.example.com' localhost, mutta näkyviin tulivat vanhan sivun tiedot. Sen jälkeen menin tarkistamaan sites-enabled -tiedoston, ja siellä tosiaan oli vain vanhan sivun konfiguraatiotiedosto. 
 
+(kuva error-vhosts)
 
+En tiedä, mitä aiemmin luoduille tiedostoille oli tapahtunut, mutta tein nyt vielä uudet komennoilla 
 
-    
+$ mkdir -p /home/nooral/publicsites/foo.example.com/
+$ mkdir -p /home/nooral/publicsites/bar.example.com/
 
-  
+Mutta tämän jälkeen edelleenkin kansiossa näkyi vain aiemmin luomani hattu.example.com.conf. 
+Menin seuraavaksi kansioon sites-available, ja siellä näkyi uusimmat konfiguraatiot. Yritin saada hattu.com -sivun pois päältä komennolla $ sudo a2dissite hattu.ecample.com.conf. 
+Sain sen pois päältä, ja järjestelmä muistutti että se piti uudelleenkäynnistää. Tein sen. 
+En muistanut, olinko jo ottanut uudet sivut käyttöön, joten tein sen nyt komennolla $ sudo a2ensite foo.example.com. 
+Yrittäessäni käynnistää apachen uudelleen, tuli seuraava virheilmoitus: 
 
-  
+(kuva error-toinen)
 
+Menin katsomaan tuon viimeisimmän lokin tiedot, ja sieltä löytyi seuraavat: 
 
+(kuva viimeinen-virhe)
 
+Näille en enää osannut tehdä mitään, joten luovutin tämän lisätehtävän kanssa. 
 
 
 
@@ -137,6 +200,10 @@ Lisäsin koulun sähköpostiosoitteen olemassaolevalle GitHub -profiililleni, jo
 
 
   # Lähteet:
+
+  Apache, Name-based Virtual Host Support: https://httpd.apache.org/docs/2.4/vhosts/name-based.html
+
+  Karvinen, Name-Based Virtual Hosts On Apache - Multiple Websites to Single IP Address: https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/
 
   Loggly, Linux Logging Basics: https://www.loggly.com/ultimate-guide/linux-logging-basics/
 
