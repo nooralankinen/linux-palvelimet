@@ -109,7 +109,7 @@ Seuraavaksi loin uudella etusivulla näytettävän tiedoston
 
 Ja sisältö on seuraava:
 
-    !doctype html>
+    <!doctype html>
     <html>
     <head>
         <title>hattu.example.com</title>
