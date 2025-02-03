@@ -3,15 +3,15 @@
 ## Apache Name-based Virtual Host Support
 
 - Name-based hosting perustuu asiakkaan pyytämään HTTP -osoitteeseen, ei IP-osoitteeseen.
-- 
+  
 - mahdollistaa sen, että useat verkkosivustot voivat käyttää samaa IP-osoitetta.
-- 
+  
 - myös name-based hosting aloitetaan ensin IP-resoluutiolla, jossa määritetään parhaiten pyyntöä vastaava virtuaalihost.
-- 
+ 
 - Käyttöönotto: Määritä ensin Virtual Host jokaiselle käyttäjälle, jota haluat palvella. Virtual Host -blokin sisään määritetään vähintäänkin server name, sekä document root, josta sivun tiedot haetaan.
-- 
+  
 - Samaan konfigurointitiedostoon voidaan lisätä useampi domain.
-- 
+  
 - ServerAlias -määrittelyllä voidaan lisätä vaihtoehtoisia kirjoitustapoja osoitteelle.
 
   
@@ -166,11 +166,11 @@ Sen jälkeen loin uuden virtual host -määrityksen näille molemmille:
         $ sudoedit /etc/apache2/sites-available/foo.example.com.conf
 
 
-(kuva virtual-hosts)
+![Add file: Upload](virtual-hosts.png)
 
 Tämän jälkeen testasin komennolla curl -H 'Host: foo.example.com' localhost, mutta näkyviin tulivat vanhan sivun tiedot. Sen jälkeen menin tarkistamaan sites-enabled -tiedoston, ja siellä tosiaan oli vain vanhan sivun konfiguraatiotiedosto. 
 
-(kuva error-vhosts)
+![Add file: Upload](error-vhosts.png)
 
 En tiedä, mitä aiemmin luoduille tiedostoille oli tapahtunut, mutta tein nyt vielä uudet komennoilla 
 
@@ -183,11 +183,11 @@ Sain sen pois päältä, ja järjestelmä muistutti että se piti uudelleenkäyn
 En muistanut, olinko jo ottanut uudet sivut käyttöön, joten tein sen nyt komennolla $ sudo a2ensite foo.example.com. 
 Yrittäessäni käynnistää apachen uudelleen, tuli seuraava virheilmoitus: 
 
-(kuva error-toinen)
+![Add file: Upload](error-toinen.png)
 
 Menin katsomaan tuon viimeisimmän lokin tiedot, ja sieltä löytyi seuraavat: 
 
-(kuva viimeinen-virhe)
+![Add file: Upload](viimeinen-virhe.png)
 
 Näille en enää osannut tehdä mitään, joten luovutin tämän lisätehtävän kanssa. 
 
