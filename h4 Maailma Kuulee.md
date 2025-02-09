@@ -3,16 +3,19 @@
 ## x) Lue ja tiivistä
 
 ## Teoriasta käytäntöön pilvipalvelimen avulla, Susanna Lehto
+
 - Pilvipalvelintarjoajia on useita, joista valita
 - Hinta vaihtelee sen mukaan, mitä ominaisuuksia serveriltä halutaan.
 - Datakeskus kannattaa valita mahdollisimman läheltä käyttäjiä, sekä Euroopan sisältä.
 
 ## First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS, Tero Karvinen
--kirjaudu sisään ssh:n avulla root:ina, muotoa 'ssh root@ip-osoite'.
--tee reiät palomuuriin porteille 80 ja 22.
+
+-kirjaudu sisään ssh:n avulla root:ina, muotoa 'ssh root@ip-osoite'
+-tee reiät palomuuriin porteille 80 ja 22
 -lisää itsesi käyttäjäksi, sekä sudo että admin -ryhmiin. 
 -lukitse root -login
 -päivitä ohjelmistot. 
+
 
 
 ## a) Vuokraa oma virtuaalipalvelin
