@@ -10,11 +10,11 @@
 
 ## First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS, Tero Karvinen
 
--kirjaudu sisään ssh:n avulla root:ina, muotoa 'ssh root@ip-osoite'
--tee reiät palomuuriin porteille 80 ja 22
--lisää itsesi käyttäjäksi, sekä sudo että admin -ryhmiin. 
--lukitse root -login
--päivitä ohjelmistot. 
+- kirjaudu sisään ssh:n avulla root:ina, muotoa 'ssh root@ip-osoite'
+- tee reiät palomuuriin porteille 80 ja 22
+- lisää itsesi käyttäjäksi, sekä sudo että admin -ryhmiin. 
+- lukitse root -login
+- päivitä ohjelmistot. 
 
 
 
