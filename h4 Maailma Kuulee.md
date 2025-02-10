@@ -59,8 +59,7 @@ Kun serveri oli valmis, sivu tarjosi myös ohjetta sen käyttöönottoon.
 
 ## b) Tee alkutoimet omalla virtuaalipalvelimellasi
 
-Toimin tämän UpCloudin ohjeen mukaan, ja serveri otettiin käyttöön. Teron ohjeesta (https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/) poiketen, järjestelmä ei kuitenkaan jostain syystä pyytänyt luomaan salasanaa root -käyttäjälle. 
-Yritin päätellä, voiko siitä olla jotain haittaa tässä. Toisaalta, oman käyttäjän lisäämisen jälkeen, root -tunnukset oli määrä lukita ulos joka tapauksessa, joten ajattelin, että ehkei tästä salasanan puuttumisesta synny suurta vahinkoa. 
+Toimin tämän UpCloudin ohjeen mukaan, ja serveri otettiin käyttöön.
 Lisäsin itseni uudeksi käyttäjäksi, sekä sudo -ryhmään komennoilla 
 
       $sudo adduser noora 
