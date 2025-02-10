@@ -118,8 +118,8 @@ Noudatin samaa, edellisessä kohdassa mainittua Teron ohjetta, ja loin sivulle u
     <VirtualHost *:80>
      ServerName kissa.example.com
      ServerAlias www.kissa.example.com
-     DocumentRoot /home/nooral/publicsites/kissa.example.com
-     <Directory /home/nooral/publicsites/kissa.example.com>
+     DocumentRoot /home/noora/publicsites/kissa.example.com
+     <Directory /home/noora/publicsites/kissa.example.com>
        Require all granted
      </Directory>
     </VirtualHost>
@@ -145,3 +145,4 @@ Tero Karvinen, Name Based Virtual Hosts on Apache – Multiple Websites to Singl
 
 Tero karvinen, First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS:  https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/
 
+UpCloud, https://upcloud.com/
