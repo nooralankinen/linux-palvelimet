@@ -89,7 +89,7 @@ Lisäsin itseni uudeksi käyttäjäksi, sekä sudo -ryhmään komennoilla
 
   ![Add file: Upload](ufw-status.png)
 
-  Sitten piti vielä lukita root -käyttäjä. Annoin komennon $ sudo usermod --lock root , jolla lukittiin salasanakirjautuminen (salasanaa tosin en ollut edes asettanut). Komennolla $ sudo rm /root/.ssh -R puolestaan estin kirjautumisen SSH-avaimella. 
+  Sitten piti vielä lukita root -käyttäjä. Annoin komennon $ sudo usermod --lock root , jolla lukittiin salasanakirjautuminen. Komennolla $ sudo rm /root/.ssh -R puolestaan estin kirjautumisen SSH-avaimella. 
 
   Lopuksi vielä softien päivitys komennoilla $ sudo apt-get update ja $ sudo apt-get upgrade. 
 
@@ -114,22 +114,34 @@ Ja sivu näytti siltä miltä pitikin.
 Päätin luoda uuden Name Based Virtual Hostin nimeltä kissa.example.com. 
 
 Noudatin samaa, edellisessä kohdassa mainittua Teron ohjetta, ja loin sivulle uuden konfiguraatiotiedoston komennolla '$ sudoedit /etc/apache2/sites-available/kissa.example.com.conf', tiedoston sisältö:
-<VirtualHost *:80>
- ServerName kissa.example.com
- ServerAlias www.kissa.example.com
- DocumentRoot /home/nooral/publicsites/kissa.example.com
- <Directory /home/nooral/publicsites/kissa.example.com>
-   Require all granted
- </Directory>
-</VirtualHost>
 
-ja otin vielä konfiguraation käyttöön. Sen jälkeen loin tekstitiedoston index.html polkuun,  /home/nooral/publicsites/kissa.example.com/, ja sinne sivulla näkyvän sisällön. 
-Testasin sivujen toimivuuden ensin terminaalissa curl localhost, se oli ok. Sitten selaimessa, ja sekin ok. Puhelimella en ensin saanut sivua näkyviin, koska en tajunnut laittaa eteen http://, mutta kysyin neuvoa chatGPT:ltä, ja se ohjeisti tämän. Sen jälkeen sivut toimivat myös puhelimella. 
+    <VirtualHost *:80>
+     ServerName kissa.example.com
+     ServerAlias www.kissa.example.com
+     DocumentRoot /home/nooral/publicsites/kissa.example.com
+     <Directory /home/nooral/publicsites/kissa.example.com>
+       Require all granted
+     </Directory>
+    </VirtualHost>
+
+ja otin vielä kyseisen konfiguraation käyttöön. Sen jälkeen loin tekstitiedoston index.html polkuun,  /home/nooral/publicsites/kissa.example.com/, ja sinne sivulla näkyvän sisällön. 
+Testasin sivujen toimivuuden ensin terminaalissa, komennolla '$ curl localhost', se oli ok. Sitten selaimessa, ja sekin ok. Puhelimella en ensin saanut sivua näkyviin, koska en tajunnut laittaa eteen http://, mutta kysyin neuvoa chatGPT:ltä, ja se ohjeisti tämän toimintatavan. Sen jälkeen sivut löytyivät myös puhelimella. 
 
 ![Add file: Upload](testisivu.png)
 
 
+
 # Lähteet
 
-Tero Karvinen,Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address:  https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/
+Ask Ubuntu, Copying SSH Key From Root To Another User On Same Machine: https://askubuntu.com/questions/1218023/copying-ssh-key-from-root-to-another-user-on-same-machine
+
+ChatGPT https://chatgpt.com/?callbackUrl=https%3A%2F%2Fchatgpt.com%2F
+
+Stack Overflow, Git: How to solve Permission denied (publickey) error when using Git?: https://stackoverflow.com/questions/2643502/git-how-to-solve-permission-denied-publickey-error-when-using-git
+
+Susanna Leino,Teoriasta käytäntöön pilvipalvelimen avulla (h4):  https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/
+
+Tero Karvinen, Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address:  https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/
+
+Tero karvinen, First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS:  https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/
 
