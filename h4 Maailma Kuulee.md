@@ -105,7 +105,7 @@ Ja tämän jälkeen tarkistus $ systemctl status apache2
 Lähdin muokkaamaan näkyvää oletussivua. 
 Tein sovelletusti Teron ohjeen mukaan (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/), eli komennolla $ echo "Testisivu"|sudo tee /var/www/html/index.html. 
 
-![Add file: Upload](testisivu1.png)
+![Add file: Upload](testisivu-1.png)
 
 Ja sivu näytti siltä miltä pitikin.
 
