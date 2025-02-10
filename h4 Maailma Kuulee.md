@@ -33,7 +33,7 @@ Vasemman reunan valikosta menin kohtaan 'Servers', jonka välilehdellä luki, et
 
 Sen jälkeen pääsin tekemään ensimmäisiä valintoja serverilleni:
 
-![Add file: Upload](server-valinnat1.png)
+![Add file: Upload](Server-valinnat1.png)
 
 ![Add file: Upload](server-valinnat2.png)
 
@@ -63,9 +63,9 @@ Toimin tämän UpCloudin ohjeen mukaan, ja serveri otettiin käyttöön. Teron o
 Yritin päätellä, voiko siitä olla jotain haittaa tässä. Toisaalta, oman käyttäjän lisäämisen jälkeen, root -tunnukset oli määrä lukita ulos joka tapauksessa, joten ajattelin, että ehkei tästä salasanan puuttumisesta synny suurta vahinkoa. 
 Lisäsin itseni uudeksi käyttäjäksi, sekä sudo -ryhmään komennoilla 
 
-  $sudo adduser noora 
-  $sudo adduser noora sudo
-  $sudo adduser noora adm
+      $sudo adduser noora 
+      $sudo adduser noora sudo
+      $sudo adduser noora adm
 
   ![Add file: Upload](adduser.png)
 
