@@ -1,6 +1,6 @@
 # a) Nimi
 
-Lähdin hankkimaan domainia tunnilla demotusta namecheap.com -sivustolta. 
+Lähdin hankkimaan domainia tunnilla demotulta namecheap.com -sivustolta. 
 Etusivun hakupalkkiin kirjoitin haluamani domainin, 'lankinen.com'. Ja yllätyksekseni se oli vielä vapaana! Myös hinta oli opiskelijabudjetille varsin kohtuullinen, vaivaiset 11,362.40e. 
 Kävin tässä välissä luomassa tilin palveluun, jotta pääsin suorittamaan ostostani loppuun.
 
