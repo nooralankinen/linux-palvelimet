@@ -1,5 +1,7 @@
 # a) Nimi
 
+
+tehtävä aloitettu 12.2 klo 8.30.
 Lähdin hankkimaan domainia tunnilla demotulta namecheap.com -sivustolta. 
 Etusivun hakupalkkiin kirjoitin haluamani domainin, 'lankinen.com'. Ja yllätyksekseni se oli vielä vapaana! Myös hinta oli opiskelijabudjetille varsin kohtuullinen, vaivaiset 11,362.40e. 
 Kävin tässä välissä luomassa tilin palveluun, jotta pääsin suorittamaan ostostani loppuun.
@@ -41,7 +43,13 @@ Odottelun jälkeen, menin selaimella osoitteeseen nooralankinen.com:
 
 # b) Based
 
+Tämä kohta oli jo toteutettu, koska sivuilla näkyi jo aiemmin luotu Name Based Virtual Host. (kts. kohta a.) Nimi)
+Sivun index.html -tiedostoa muokkaamalla saadaan muutettua sivun sisältöä. 
+
+
 # c) Kotisivu
+
+
 
 # d) Alidomain
 
@@ -56,3 +64,5 @@ Odottelun jälkeen, menin selaimella osoitteeseen nooralankinen.com:
 Namecheap: https://www.namecheap.com/ 
 
 Namechep, All Types of DNS Records Explained: https://www.namecheap.com/support/knowledgebase/article.aspx/10594/10/all-types-of-dns-records-explained/
+
+Tero Karvinen, Name Based Virtual Hosts on Apache– Multiple Websites to Single IP Address: https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/
