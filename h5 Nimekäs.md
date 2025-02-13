@@ -49,7 +49,41 @@ Sivun index.html -tiedostoa muokkaamalla saadaan muutettua sivun sisältöä.
 
 # c) Kotisivu
 
+Tätä kohtaa aloitin 12.2 klo 12.05
+Siitä on jo tovi aikaa, kun olen viimeksi tehnyt kotisivuja, joten päätin kerrata asioita ensin hieman W3 Schoolsin avulla. Tarkoitus olisi jossain kohtaa rakentaa tälle ostamalleni domainille omat kotisivut, mutta tätä tehtävää varten loin kuitenkin vain pyydetyt rakenteet. 
+Lähdin rakentamaan sivua Visual Studio Coden avulla, joka minulta löytyy jo valmiiksi koneelle asennettuna. Kopioin alkuun sivun koodiksi Teron (https://terokarvinen.com/2012/short-html5-page/) kirjoittaman simppelin html-koodin.
 
+Jatkoin tehtävää 13.2 klo 10.50
+Täydensin sivun koodia W3 Schoolsin ohjeiden perusteella. 
+Kun olin saanut sivun rakenteet kasaan, avasin virtuaalikoneen ja loin komennolla '$ sudoedit /etc/apache2/sites-available/nooralankinen.com.conf' konfiguraatiotiedoston sivulle. 
+
+(nooralankinen.com-conf)
+
+Otin konfiguraation käyttöön ja restarttasin Apachen, jotta muutokset otetaan käyttöön. 
+Seuraavaksi loin kansion '$ mkdir -p /home/noora/publicsites/nooralankinen.com/', ja '$ echo kukkuu > /home/noora/publicsites/nooralankinen.com/index.html'. 
+Sitten testasin komennolla 'curl localhost':
+
+/(kuva curl-localhost)
+
+(curl-host)
+
+Menin katsomaan, mitä error.log :ista näkyy. Ja viimeisimpänä näkyi seuraava viesti:
+
+(errorlog)
+
+Eli ongelma oli ilmeisesti jonkin polun kansion käyttöoikeuksissa. Tarkistin käyttöoikeudet:
+
+(kuva kaytto-oikeudet)
+
+Ja näytti, että kolmannella, eli 'muut'-ryhmällä ei näyttänyt olevan kuin read -oikeudet. Yritin muistella, mitä tunnilla mahdettiin sanoa käyttöoikeuksista, joita tarvitaan jotta sivut saadaan luettua. Googlesta löysin Linux Foundationin sivun (https://www.linuxfoundation.org/blog/blog/classic-sysadmin-understanding-linux-file-permissions), jolla asiaa selitettiin. Järkeilin sen perusteella, että käyttöoikeus execute tulisi olla myös others-ryhmällä. Päätin kuitenkin vielä kysyä asiaa ChatGPT:ltä, ja tilanteen selittämisen jälkeen se veikkasi ongelmaksi sitä, ettei Apachella ole käyttöoikeuksia kaikkiin polun kansioihin. Ongelman ratkaisuksi se käski antaa x-oikeuden hakemistopolun eri osiin seuraavilla komennoilla:
+
+    $ sudo chmod +x /home
+    $ sudo chmod +x /home/noora
+    $ sudo chmod +x /home/noora/publicsites
+    $ sudo chmod +x /home/noora/publicsites/nooralankinen.com
+
+Tein työtä käskettyä. Tämän jälkeen päivitin selaimen, ja kas kummaa, sivu tuli näkyviin. Tässä kohtaa tosin harmitti, etten ollut käynyt itse tarkastamassa kaikki hakemistopolun kansioiden oikeuksia, koska olisin saattanut hoksata asian sieltä myös itse. Tai sitten en. Tavallaan olin oikeilla jäljillä, mutta aiempi päätelmäni ei kuitenkaan pitänyt täysin paikkaansa, koska ilmeisesti index.html -tiedostolle Apachelle riittää oikeus 'read', ja vika oli ylempänä hakemistopolussa. Loppu hyvin, kaikki hyvin kuitenkin. 
+Loin vielä samaiseen nooralankinen.com -kansioon tiedostot 'art.html', 'contact.html' ja 'about.html', alasivuja varten, ja lisäsin sinne haluamani koodin. 
 
 # d) Alidomain
 
@@ -66,3 +100,7 @@ Namecheap: https://www.namecheap.com/
 Namechep, All Types of DNS Records Explained: https://www.namecheap.com/support/knowledgebase/article.aspx/10594/10/all-types-of-dns-records-explained/
 
 Tero Karvinen, Name Based Virtual Hosts on Apache– Multiple Websites to Single IP Address: https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/
+
+Tero Karvinen, Short HTML5 page: https://terokarvinen.com/2012/short-html5-page/
+
+W3 Schools, HTML Tutorial: https://www.w3schools.com/html/default.asp
