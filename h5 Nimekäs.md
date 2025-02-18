@@ -25,8 +25,6 @@ Palasin siis takaisin etusivulle, ja hain seuraavaksi domainin 'nooralankinen.co
 
 Domainin kylkeen tarjolla olisi ollut myös jos jonkinlaista palvelua, mutta päätin pysytellä pelkässä domainin hankinnassa.
 
-![Add file: Upload](ekstrat.png)
-
 Maksoin ostokseni PayPalilla.
 
 ![Add file: Upload](ostos.png)
