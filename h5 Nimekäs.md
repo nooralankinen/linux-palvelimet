@@ -27,8 +27,6 @@ Domainin kylkeen tarjolla olisi ollut myös jos jonkinlaista palvelua, mutta pä
 
 Maksoin ostokseni PayPalilla.
 
-![Add file: Upload](ostos.png)
-
 Tämän jälkeen palasin taas etusivulle, ja lähdin etsimään paikkaa josta tehdä muutokset DNS -asetuksiin. Tämä siksi, että sivu olisi mahdollista löytää netistä domainin perusteella. 
 Sivun yläreunassa, käyttäjätunnuksen vieressä olevasta nuolesta avautui valikko, ja sieltä kohta 'Dashboard'. Avautuvalta sivulta valittiin vielä sivun keskeltä ylävalikosta tuo 'Advanced DNS', ja sen jälkeen syötettiin tiedot klikkaamalla '+ Add new record' -painiketta.
 
