@@ -1,12 +1,15 @@
 # a) Nimi
 
+Fyysinen kone: Suoritin 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz 3.11 GHz Asennettu RAM 8,00 Gt (7,70 Gt käytettävissä) Käyttöjärjestelmä Windows 11 Home, 23H2 Näytönohjain: Intel Iris Xe Graphics
+
+Oracle Virtualbox Version 7.1.4 r165100 (Qt6.5.3) Debian Live 12.9.0, amd64-xfce
 
 tehtävä aloitettu 12.2 klo 8.30.
 Lähdin hankkimaan domainia tunnilla demotulta namecheap.com -sivustolta. 
 Etusivun hakupalkkiin kirjoitin haluamani domainin, 'lankinen.com'. Ja yllätyksekseni se oli vielä vapaana! Myös hinta oli opiskelijabudjetille varsin kohtuullinen, vaivaiset 11,362.40e. 
 Kävin tässä välissä luomassa tilin palveluun, jotta pääsin suorittamaan ostostani loppuun.
 
-(kuva domain-haku)
+![Add file: Upload](domain-haku.png)
 
 Tarkkaavaisuushäiriöisenä katsoin siis hinnan olevan vajaa 12e. Maksuvaiheessa kuitenkin tuli vastaan ongelma. Järjestelmä pyysi nimittäin tarkistamaan tilini saldon, sillä maksua ei jostain syystä oltu voitu sieltä veloittaa. Tässä vaiheessa keskityin katsomaan pilkkujen ja pisteen paikan hinnassa uudestaan.
 Ja ihmekös tuo ettei maksu mennyt läpi, kun saldosta uupui noin kymppitonnin verran. Epäilin, että kyseessä täytyy olla jokin järjestelmän pilkkuvirhe, ja laitoin sivuston chattiin viestin hinnasta. Sieltä vastattiin, että hinta on ihan oikea. Kyseessä on premium -domain, jonka hinta tosiaan on tuo reilu 11 000e.
@@ -16,29 +19,29 @@ Mietin hetken, kannattaako tällaista kömmähdystä edes kirjoittaa tänne, mut
 
 Palasin siis takaisin etusivulle, ja hain seuraavaksi domainin 'nooralankinen.com.' Sekin oli vapaana, ja hinnalla 6,46e / vuosi. Se kuulosti jo paljon paremmalta. 
 
-(kuva domain-2)
+![Add file: Upload](domain-2.png)
 
-(kuva speksit)
+![Add file: Upload](speksit.png)
 
 Domainin kylkeen tarjolla olisi ollut myös jos jonkinlaista palvelua, mutta päätin pysytellä pelkässä domainin hankinnassa.
 
-(kuva ekstrat)
+![Add file: Upload](ekstrat.png)
 
 Maksoin ostokseni PayPalilla.
 
-(kuva ostos)
+![Add file: Upload](ostos.png)
 
 Tämän jälkeen palasin taas etusivulle, ja lähdin etsimään paikkaa josta tehdä muutokset DNS -asetuksiin. Tämä siksi, että sivu olisi mahdollista löytää netistä domainin perusteella. 
 Sivun yläreunassa, käyttäjätunnuksen vieressä olevasta nuolesta avautui valikko, ja sieltä kohta 'Dashboard'. Avautuvalta sivulta valittiin vielä sivun keskeltä ylävalikosta tuo 'Advanced DNS', ja sen jälkeen syötettiin tiedot klikkaamalla '+ Add new record' -painiketta.
 
-(kuva dns)
+![Add file: Upload](dns.png)
 
 Ensimmäisten tietojen tallennuksen jälkeen sivusto poisti automaattisesti siellä aiemmin olleet recordit. 
 Tässä kohtaa tunnilla ohjeistettiin, että kannattaa hetki odottaa (n. 30min) ennen domainin testaamista, jotta tietueet ehtivät varmasti päivittyä. 
 
 Odottelun jälkeen, menin selaimella osoitteeseen nooralankinen.com:
 
-(kuva nooralankinen.com)
+![Add file: Upload](nooralankinen.com.png)
 
 
 # b) Based
@@ -57,23 +60,23 @@ Jatkoin tehtävää 13.2 klo 10.50
 Täydensin sivun koodia W3 Schoolsin ohjeiden perusteella. 
 Kun olin saanut sivun rakenteet kasaan, avasin virtuaalikoneen ja loin komennolla '$ sudoedit /etc/apache2/sites-available/nooralankinen.com.conf' konfiguraatiotiedoston sivulle. 
 
-(nooralankinen.com-conf)
+![Add file: Upload](nooralankinen.com-conf.png)
 
 Otin konfiguraation käyttöön ja restarttasin Apachen, jotta muutokset otetaan käyttöön. 
 Seuraavaksi loin kansion '$ mkdir -p /home/noora/publicsites/nooralankinen.com/', ja '$ echo kukkuu > /home/noora/publicsites/nooralankinen.com/index.html'. 
 Sitten testasin komennolla 'curl localhost':
 
-/(kuva curl-localhost)
+![Add file: Upload](curl-localhost.png)
 
-(curl-host)
+![Add file: Upload](curl-host.png)
 
 Menin katsomaan, mitä error.log :ista näkyy. Ja viimeisimpänä näkyi seuraava viesti:
 
-(errorlog)
+![Add file: Upload](errorlog.png)
 
 Eli ongelma oli ilmeisesti jonkin polun kansion käyttöoikeuksissa. Tarkistin käyttöoikeudet:
 
-(kuva kaytto-oikeudet)
+![Add file: Upload](kaytto-oikeudet.png)
 
 Ja näytti, että kolmannella, eli 'muut'-ryhmällä ei näyttänyt olevan kuin read -oikeudet. Yritin muistella, mitä tunnilla mahdettiin sanoa käyttöoikeuksista, joita tarvitaan jotta sivut saadaan luettua. Googlesta löysin Linux Foundationin sivun (https://www.linuxfoundation.org/blog/blog/classic-sysadmin-understanding-linux-file-permissions), jolla asiaa selitettiin. Järkeilin sen perusteella, että käyttöoikeus execute tulisi olla myös others-ryhmällä. Päätin kuitenkin vielä kysyä asiaa ChatGPT:ltä, ja tilanteen selittämisen jälkeen se veikkasi ongelmaksi sitä, ettei Apachella ole käyttöoikeuksia kaikkiin polun kansioihin. Ongelman ratkaisuksi se käski antaa x-oikeuden hakemistopolun eri osiin seuraavilla komennoilla:
 
@@ -91,17 +94,17 @@ Tätä tehtävän osaa aloin tekemään 18.2.2025 klo 11.40
 
 Alidomainien luomiseksi menin ensimmäiseksi domainini palveluntarjoajan sivulle, https://www.namecheap.com/ ja kirjauduin sisään. Dashboard -näkymän kautta, josta aiemmassa tehtävässä lisättiin DNS -tietueet, mennään tällä kertaa lisäämään myös uudet alidomainit. 
 
-kuva new-dns1
+![Add file: Upload](new-dns1.png)
 
 Tehtävänannon mukaisesti päätin tehdä ensimmäisen alidomainin A-tietueella. Hetken aikaa pohdin, kuinka tämä alidomain kuuluu määritellä, mutta koska kenttiä ei ollut paljon valittavana, päättelin, että 'host' kenttään tulee kirjoittaa haluttu alidomain. Heti en pysty toimivuutta testaamaan, joten tehdään se myöhemmin. 
 Päätin tehdä vapaaehtoisen bonustehtävän, eli tehdä toisen alidomainin CNAME -tietueella. En kuitenkaan tunne tätä tietueasiaa kovin hyvin, niin päätin ensin hieman perehtyä, mistä näissä eri tietuetyypeissä on oikeastaan kyse. Lueskelin ensin NameCheapin oman artikkelin eri tietueista (https://www.namecheap.com/support/knowledgebase/article.aspx/579/2237/which-record-type-option-should-i-choose-for-the-information-im-about-to-enter/), ja vielä videon aiheesta YouTubesta (https://www.youtube.com/watch?v=ZXCQwdVgDno).
 Tämän jälkeen, aloin tehdä toista alidomainia. Tietueeksi valitsin siis CNAME record, 'Host' kohtaan kirjoitin 'blogi' ja 'Value'-riville IP-osoitteen 94.234.37.216, TTL 5min. Tämän jälkeen klikkasin rivin hyväksytyksi. Sivusto kuitenkin antoi seuraavan virheilmoituksen:
 
-kuva error-dns
+![Add file: Upload](error-dns.png)
 
 Eli syöttämäni tiedot eivät olleet oikein. Luin vielä uudestaan aiempia ohjesivuja läpi. Niiden perusteella, jos olen ymmärtänyt asian oikein, CNAME record voi ainoastaan ohjata toiseen domainnimeen, ei IP-osoitteeseen. Eli vaihdoin nyt 'Value' -riville osoitteeksi linuxkurssi.nooralankinen.com. Sillä muutoksella, rivi hyväksyttiin. Tämän vuoksi, osoitteeseen mennessä tulee nyt ainakin yksi ylimääräinen DNS-kysely tuon linuxkurssi. mutkan vuoksi, ja sen välttämiseksi olisi ollut fiksumpaa laittaa osoitteeksi pelkkä nooralankinen.com. En tiedä, voiko siitä olla jotain muuta haittaa, että CNAME ohjaa nyt toiselle alidomainille. Ehkäpä asia selviää minulle kurssin edetessä.  
 
-kuva dns-setup
+![Add file: Upload](dns-setup.png)
 
 # e) 'host' ja 'dig'
 
@@ -109,7 +112,7 @@ kuva dns-setup
 
 Avasin tehtävää varten virtuaalikoneen, ja sieltä terminaalin. Ajattelin ensin tutkia ohjeen mukaisesti, mitä host ja dig -komennoilla tehdään. Jostain syystä manuaali ei kuitenkaan näyttänyt näistä mitään tietoja 
 
-kuva man
+![Add file: Upload](man.png)
 
 Piti siis ensin asentaa kyseinen manuaali komennolla 
 
@@ -117,13 +120,13 @@ Piti siis ensin asentaa kyseinen manuaali komennolla
 
 Asennuksen jälkeen pääsin selaamaan manuaali. Aloitin ensin 'host' komennosta. 
 
-kuva man-host
+![Add file: Upload](man-host.png)
 
-kuva man-dig
+![Add file: Upload](man-dig.png)
 
 Luettuani manuaalit, menin katsomaan ensin, mitä tietoja molemmilla komennoilla on saatavilla osoitteesta nooralankinen.com
 
-kuva nooralankinen.com-hostdig
+![Add file: Upload](nooralankinen.com-hostdig.png) 
 
 Tarkastellaan ensin host-komennon tarjoamia tietoja DNS-tietueista. Tässä tietoja on huomattavasti vähemmän, mutta
 ensimmäisellä rivillä lukee kyseisen domainin IP-osoite 94.237.37.216. 
@@ -131,23 +134,23 @@ Tämän jälkeen on tietoja sähköpostipalvelimista ja niiden prioriteeteista.
 
 Dig -komennolla tietoja onkin saatavilla jo enemmän. Oleellisimpia tässä kohtaa ovat kuitenkin QUESTION SECTION, ja ANSWER SECTION. Question section kertoo, mitä on kysytty. Eli tässä tapauksessa osoitetta nooralankinen.com. Ja Answer section taas, mitä palvelin on vastannut kyselyyn. Vastauksesta selviää, että kyseisen vastauksen TTL on 261. Asetuksissa säädimme TTL:n viiteen minuuttiin, eli vastaa asetettua. Vastauksessa kerrotaan myös, että kyseessä on A-tietue, jonka IP-osoite on 94.237.37.216. Lisäksi siitä selviää vastausaika (4 ms), nimipalvelimen IP (94.237.127.9) ja portti (53). DNS käyttää oletusasetuksena porttia 53, eli se on kunnossa, ja sivustolta whatsmyip.com haettaessa (https://www.whatismyip.com/ip/94.237.127.9/) sivu näyttää, että kyseinen IP-osoite kuuluu upcloudille, jossa virtuaaliserverini sijaitsee. Lopussa on vielä hakuajankohta, sekä vastauksen koko tavuina. 
 
-kuva whatsmyip
+![Add file: Upload](whatsmyip.png) 
 
 Seuraavaksi hain domainin gilda.fi -tiedot samoilla komennoilla:
 
-kuva gilda.fi
+![Add file: Upload](gilda.fi.png) 
 
 Tässä host- komento näyttää IPv4 -osoitteen lisäksi myös kyseisen domainin IPv6 -osoitteen. Dig -toiminto taas ei automaattisesti näytä sitä, mutta sekin on saatavissa näkyville komennolla 'dig gilda.fi AAAA'
 
-kuva gildaAAAA
+![Add file: Upload](gildaAAAA.png) 
 
 Kyselyn käsitellyt nimipalvelin on sama, koska haku tehtiin samasta osoitteesta. 
 
 Viimeisenä päätin hakea google.com -tiedot. 
 
-kuva google.com 
+![Add file: Upload](google.com.png)  
 
-kuva google AAAA
+![Add file: Upload](googleAAAA.png) 
 
 
 
