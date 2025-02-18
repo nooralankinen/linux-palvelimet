@@ -87,20 +87,86 @@ Loin vielä samaiseen nooralankinen.com -kansioon tiedostot 'art.html', 'contact
 
 # d) Alidomain
 
+Tätä tehtävän osaa aloin tekemään 18.2.2025 klo 11.40
+
+Alidomainien luomiseksi menin ensimmäiseksi domainini palveluntarjoajan sivulle, https://www.namecheap.com/ ja kirjauduin sisään. Dashboard -näkymän kautta, josta aiemmassa tehtävässä lisättiin DNS -tietueet, mennään tällä kertaa lisäämään myös uudet alidomainit. 
+
+kuva new-dns1
+
+Tehtävänannon mukaisesti päätin tehdä ensimmäisen alidomainin A-tietueella. Hetken aikaa pohdin, kuinka tämä alidomain kuuluu määritellä, mutta koska kenttiä ei ollut paljon valittavana, päättelin, että 'host' kenttään tulee kirjoittaa haluttu alidomain. Heti en pysty toimivuutta testaamaan, joten tehdään se myöhemmin. 
+Päätin tehdä vapaaehtoisen bonustehtävän, eli tehdä toisen alidomainin CNAME -tietueella. En kuitenkaan tunne tätä tietueasiaa kovin hyvin, niin päätin ensin hieman perehtyä, mistä näissä eri tietuetyypeissä on oikeastaan kyse. Lueskelin ensin NameCheapin oman artikkelin eri tietueista (https://www.namecheap.com/support/knowledgebase/article.aspx/579/2237/which-record-type-option-should-i-choose-for-the-information-im-about-to-enter/), ja vielä videon aiheesta YouTubesta (https://www.youtube.com/watch?v=ZXCQwdVgDno).
+Tämän jälkeen, aloin tehdä toista alidomainia. Tietueeksi valitsin siis CNAME record, 'Host' kohtaan kirjoitin 'blogi' ja 'Value'-riville IP-osoitteen 94.234.37.216, TTL 5min. Tämän jälkeen klikkasin rivin hyväksytyksi. Sivusto kuitenkin antoi seuraavan virheilmoituksen:
+
+kuva error-dns
+
+Eli syöttämäni tiedot eivät olleet oikein. Luin vielä uudestaan aiempia ohjesivuja läpi. Niiden perusteella, jos olen ymmärtänyt asian oikein, CNAME record voi ainoastaan ohjata toiseen domainnimeen, ei IP-osoitteeseen. Eli vaihdoin nyt 'Value' -riville osoitteeksi linuxkurssi.nooralankinen.com. Sillä muutoksella, rivi hyväksyttiin. Tämän vuoksi, osoitteeseen mennessä tulee nyt ainakin yksi ylimääräinen DNS-kysely tuon linuxkurssi. mutkan vuoksi, ja sen välttämiseksi olisi ollut fiksumpaa laittaa osoitteeksi pelkkä nooralankinen.com. En tiedä, voiko siitä olla jotain muuta haittaa, että CNAME ohjaa nyt toiselle alidomainille. Ehkäpä asia selviää minulle kurssin edetessä.  
+
+kuva dns-setup
+
 # e) 'host' ja 'dig'
 
-# f) Aakkossalaattia sähköpostiin
+18.2.2025 klo 13.04.
+
+Avasin tehtävää varten virtuaalikoneen, ja sieltä terminaalin. Ajattelin ensin tutkia ohjeen mukaisesti, mitä host ja dig -komennoilla tehdään. Jostain syystä manuaali ei kuitenkaan näyttänyt näistä mitään tietoja 
+
+kuva man
+
+Piti siis ensin asentaa kyseinen manuaali komennolla 
+
+        $ sudo apt install man-db
+
+Asennuksen jälkeen pääsin selaamaan manuaali. Aloitin ensin 'host' komennosta. 
+
+kuva man-host
+
+kuva man-dig
+
+Luettuani manuaalit, menin katsomaan ensin, mitä tietoja molemmilla komennoilla on saatavilla osoitteesta nooralankinen.com
+
+kuva nooralankinen.com-hostdig
+
+Tarkastellaan ensin host-komennon tarjoamia tietoja DNS-tietueista. Tässä tietoja on huomattavasti vähemmän, mutta
+ensimmäisellä rivillä lukee kyseisen domainin IP-osoite 94.237.37.216. 
+Tämän jälkeen on tietoja sähköpostipalvelimista ja niiden prioriteeteista. 
+
+Dig -komennolla tietoja onkin saatavilla jo enemmän. Oleellisimpia tässä kohtaa ovat kuitenkin QUESTION SECTION, ja ANSWER SECTION. Question section kertoo, mitä on kysytty. Eli tässä tapauksessa osoitetta nooralankinen.com. Ja Answer section taas, mitä palvelin on vastannut kyselyyn. Vastauksesta selviää, että kyseisen vastauksen TTL on 261. Asetuksissa säädimme TTL:n viiteen minuuttiin, eli vastaa asetettua. Vastauksessa kerrotaan myös, että kyseessä on A-tietue, jonka IP-osoite on 94.237.37.216. Lisäksi siitä selviää vastausaika (4 ms), nimipalvelimen IP (94.237.127.9) ja portti (53). DNS käyttää oletusasetuksena porttia 53, eli se on kunnossa, ja sivustolta whatsmyip.com haettaessa (https://www.whatismyip.com/ip/94.237.127.9/) sivu näyttää, että kyseinen IP-osoite kuuluu upcloudille, jossa virtuaaliserverini sijaitsee. Lopussa on vielä hakuajankohta, sekä vastauksen koko tavuina. 
+
+kuva whatsmyip
+
+Seuraavaksi hain domainin gilda.fi -tiedot samoilla komennoilla:
+
+kuva gilda.fi
+
+Tässä host- komento näyttää IPv4 -osoitteen lisäksi myös kyseisen domainin IPv6 -osoitteen. Dig -toiminto taas ei automaattisesti näytä sitä, mutta sekin on saatavissa näkyville komennolla 'dig gilda.fi AAAA'
+
+kuva gildaAAAA
+
+Kyselyn käsitellyt nimipalvelin on sama, koska haku tehtiin samasta osoitteesta. 
+
+Viimeisenä päätin hakea google.com -tiedot. 
+
+kuva google.com 
+
+kuva google AAAA
 
 
 
 ##Lähteet
 
+Clouds.net, Linux Host command, troubleshot your DNS: https://www.cloudns.net/blog/linux-host-command-troubleshot-dns/
+
+Geeks for geeks, dig Command in Linux with Examples: https://www.geeksforgeeks.org/dig-command-in-linux-with-examples/
+
 Namecheap: https://www.namecheap.com/ 
 
-Namechep, All Types of DNS Records Explained: https://www.namecheap.com/support/knowledgebase/article.aspx/10594/10/all-types-of-dns-records-explained/
+Namecheap, All Types of DNS Records Explained: https://www.namecheap.com/support/knowledgebase/article.aspx/10594/10/all-types-of-dns-records-explained/
+
+Namecheap, Which record type option should I choose for the information I’m about to enter?: https://www.namecheap.com/support/knowledgebase/article.aspx/579/2237/which-record-type-option-should-i-choose-for-the-information-im-about-to-enter/
 
 Tero Karvinen, Name Based Virtual Hosts on Apache– Multiple Websites to Single IP Address: https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/
 
 Tero Karvinen, Short HTML5 page: https://terokarvinen.com/2012/short-html5-page/
+
+Tony Teaches Tech, What are CNAME records? (and how they compare to DNS A records): https://www.youtube.com/watch?v=ZXCQwdVgDno
 
 W3 Schools, HTML Tutorial: https://www.w3schools.com/html/default.asp
