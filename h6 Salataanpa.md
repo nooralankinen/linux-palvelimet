@@ -67,6 +67,10 @@ Eli seuraavaksi tekemään muutoksia konfiguraatiotiedostoon. Se löytyy /etc/ap
 
 (kuva konfiguraatio)
 
+(kuva ufw)
+
+kuva finaltest
+
 
 
 
