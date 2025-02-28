@@ -32,8 +32,43 @@
   (koneen tiedot)
   Aloitin menemällä Let's Encryptin sivuille (https://letsencrypt.org/), ja klikkaamalla heti etusivun bannerista 'Get Started'.
   (kuva letsencrypt)
-  Siitä aukesi 'Lets Get Started' -sivu, jossa kerrottiin että useimmissa tapauksissa hosting provider hakee ja hoitaa Let's Encryptin sertifikaatit. Mutta koska hallinnoimme serveriä itse, ei hostausta ole, joten sertifikaatit pitää tällöin hakea itse. Sivusto suositteli
+  Siitä aukesi 'Lets Get Started' -sivu, jossa kerrottiin että useimmissa tapauksissa hosting provider hakee ja hoitaa Let's Encryptin sertifikaatit. Mutta koska hallinnoimme serveriä itse, ei hostausta ole, joten sertifikaatit pitää tällöin hakea itse. Sivusto       
+  suositteli
   työkaluksi Certbot ACME Clientiä (https://certbot.eff.org/), mutta tunnilla käytiin läpi Lego, ja se löytyi myös heidän listaamistaan muista hyväksytyistä ACME Clienteistä (https://letsencrypt.org/docs/client-options/).
+  Sen jälkeen avasin virtuaalikoneen, ja terminaalin. Päivitysten asentamisen jälkeen asensin Lego:n komennolla
+
+    $sudo apt-get install lego
+
+Asennuksen jälkeen testasin toimivuuden
+
+(kuva lego)
+
+Menin tämän jälkeen luomaan kansion Lego:lle kotihakemistooni:
+
+(kuva legokansio)
+
+Koska meillä on jo olemassa oleva verkkopalvelin portissa 80 käytämme sitä, ja annamme Legolle tiedon, minne haluamme sen kirjoittavan varmenteen saamiseen tarvittavat tiedostot. Tämän vuoksi kävin aiemmin luomassa kansion, jonne tiedostot kirjoitetaan. Komennon runko näyttää jotakuinkin tältä:
+
+    lego --accept-tos --email you@example.com --http --http.webroot /path/to/webroot --domains example.com run
+
+Katsoin tunnilta ottamiani kuvakaappauksia, ja niissä komento näytti hieman erilaiselta. Se oli seuraava (omilla tiedoillani):
+
+(kuva yritys1)
+
+Tällä komennolla ei kuitenkaan saanut muuta kuin Legon help -tiedot näkyville. Eli se ei toiminut. Myöskään mitään uusia tiedostoja tai kansioita ei ollut tullut mihinkään. Kokeilin seuraavaksi tuota Legon versiota komennosta omilla tiedoilla: 
+
+(kuva yritys2)
+
+Ja nyt tiedostojen luonti näytti onnnistuvan. Kävin vielä tarkistamassa järjestelmän ilmoittamassa tallennuskansiossa /home/noora/.lego , ja sieltä sertifikaatit löytyivätkin.
+
+(kuva sertifikaatit)
+
+Eli seuraavaksi tekemään muutoksia konfiguraatiotiedostoon. Se löytyy /etc/apache2/sites-available/nooralankinen.com.conf. 
+
+(kuva konfiguraatio)
+
+
+
 
 
 
