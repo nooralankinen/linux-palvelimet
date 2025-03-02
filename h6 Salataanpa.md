@@ -83,6 +83,20 @@ Ja lopuksi menin viel채 tarkistamaan selaimelta, ett채 sertifikaatti otettiin k�
 ![Add file: Upload](finaltest.png)
 
 
+**Muokattu 2.3.2025, lis채ttu unohtunut teht채v채n kohta**
+
+# b) A-rating
+
+Menin sivustolle https://www.ssllabs.com/ssltest/ testaamaan sivuston TLS:n. Sy철tin etusivun kentt채채n domainini nooralankinen.com. 
+
+![Add file: Upload](ssltest.png)
+
+Jonkin aikaa sivusto teki testej채 ja haki tietoja. Lopulta se antoi pitk채n testiraportin tekemist채채n testeist채 ja niiden tuloksista. Otsikkoina olivat esimerkiksi protocols, cipher suites, handshake simulation ja protocol detail. 
+
+![Add file: Upload](raport1.png)
+
+![Add file: Upload](raportti21.png)
+
 
 
 
@@ -105,5 +119,7 @@ Ja lopuksi menin viel채 tarkistamaan selaimelta, ett채 sertifikaatti otettiin k�
   Let's Encrypt 2024: How It Works, https://letsencrypt.org/how-it-works/
 
   Lange 2024: Lego: Obtain a Certificate: Using an existing, running web server, https://go-acme.github.io/lego/usage/cli/obtain-a-certificate/index.html#using-an-existing-running-web-server
+
+  SSL Server Test: https://www.ssllabs.com/ssltest/
 
   The Apache Software Foundation 2025: Apache HTTP Server Version 2.4 [Official] Documentation: SSL/TLS Strong Encryption: How-To: Basic Configuration Example, https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample
