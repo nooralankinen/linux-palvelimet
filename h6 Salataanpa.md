@@ -29,9 +29,16 @@
     # a) Let's
   
   Tehtävä aloitettu 28.2.2025 kotona klo 16.10.
-  (koneen tiedot)
+  
+  Fyysinen kone: Suoritin 11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz 3.11 GHz Asennettu RAM 8,00 Gt (7,70 Gt käytettävissä)       
+  Käyttöjärjestelmä Windows 11 Home, 23H2 Näytönohjain: Intel Iris Xe Graphics
+
+  Oracle Virtualbox Version 7.1.4 r165100 (Qt6.5.3), Debian Live 12.9.0, amd64-xfce, 1 CPU, Base memory: 3005MB. 
+  
   Aloitin menemällä Let's Encryptin sivuille (https://letsencrypt.org/), ja klikkaamalla heti etusivun bannerista 'Get Started'.
-  (kuva letsencrypt)
+  
+  ![Add file: Upload](letsencrypt.png)
+  
   Siitä aukesi 'Lets Get Started' -sivu, jossa kerrottiin että useimmissa tapauksissa hosting provider hakee ja hoitaa Let's Encryptin sertifikaatit. Mutta koska hallinnoimme serveriä itse, ei hostausta ole, joten sertifikaatit pitää tällöin hakea itse. Sivusto       
   suositteli
   työkaluksi Certbot ACME Clientiä (https://certbot.eff.org/), mutta tunnilla käytiin läpi Lego, ja se löytyi myös heidän listaamistaan muista hyväksytyistä ACME Clienteistä (https://letsencrypt.org/docs/client-options/).
@@ -41,11 +48,11 @@
 
 Asennuksen jälkeen testasin toimivuuden
 
-(kuva lego)
+![Add file: Upload](lego.png)
 
 Menin tämän jälkeen luomaan kansion Lego:lle kotihakemistooni:
 
-(kuva legokansio)
+![Add file: Upload](lego.png)
 
 Koska meillä on jo olemassa oleva verkkopalvelin portissa 80 käytämme sitä, ja annamme Legolle tiedon, minne haluamme sen kirjoittavan varmenteen saamiseen tarvittavat tiedostot. Tämän vuoksi kävin aiemmin luomassa kansion, jonne tiedostot kirjoitetaan. Komennon runko näyttää jotakuinkin tältä:
 
@@ -53,23 +60,27 @@ Koska meillä on jo olemassa oleva verkkopalvelin portissa 80 käytämme sitä, 
 
 Katsoin tunnilta ottamiani kuvakaappauksia, ja niissä komento näytti hieman erilaiselta. Se oli seuraava (omilla tiedoillani):
 
-(kuva yritys1)
+![Add file: Upload](yritys1.png)
 
 Tällä komennolla ei kuitenkaan saanut muuta kuin Legon help -tiedot näkyville. Eli se ei toiminut. Myöskään mitään uusia tiedostoja tai kansioita ei ollut tullut mihinkään. Kokeilin seuraavaksi tuota Legon versiota komennosta omilla tiedoilla: 
 
-(kuva yritys2)
+![Add file: Upload](yritys2.png)
 
 Ja nyt tiedostojen luonti näytti onnnistuvan. Kävin vielä tarkistamassa järjestelmän ilmoittamassa tallennuskansiossa /home/noora/.lego , ja sieltä sertifikaatit löytyivätkin.
 
-(kuva sertifikaatit)
+![Add file: Upload](sertifikaatit.png)
 
-Eli seuraavaksi tekemään muutoksia konfiguraatiotiedostoon. Se löytyy /etc/apache2/sites-available/nooralankinen.com.conf. 
+Eli seuraavaksi tekemään alla näkyvät lisäykset konfiguraatiotiedostoon, /etc/apache2/sites-available/nooralankinen.com.conf. 
 
-(kuva konfiguraatio)
+![Add file: Upload](konfiguraatio.png)
 
-(kuva ufw)
+Tein reiän palomuuriin portille 443 komennolla 'sudo ufw allow 443/tcp' sekä tarkistin että toiminto onnistui komennolla 'sudo ufw status':
 
-kuva finaltest
+![Add file: Upload](ufw.png)
+
+Ja lopuksi menin vielä tarkistamaan selaimelta, että sertifikaatti otettiin käyttöön onnistuneesti: 
+
+![Add file: Upload](finaltest.png)
 
 
 
