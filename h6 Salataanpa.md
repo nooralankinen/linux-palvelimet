@@ -52,7 +52,7 @@ Asennuksen jälkeen testasin toimivuuden
 
 Menin tämän jälkeen luomaan kansion Lego:lle kotihakemistooni:
 
-![Add file: Upload](lego.png)
+![Add file: Upload](legokansio.png)
 
 Koska meillä on jo olemassa oleva verkkopalvelin portissa 80 käytämme sitä, ja annamme Legolle tiedon, minne haluamme sen kirjoittavan varmenteen saamiseen tarvittavat tiedostot. Tämän vuoksi kävin aiemmin luomassa kansion, jonne tiedostot kirjoitetaan. Komennon runko näyttää jotakuinkin tältä:
 
