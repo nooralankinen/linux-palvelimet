@@ -152,7 +152,7 @@ Viimeisenä päätin hakea google.com -tiedot.
 
 ##Lähteet
 
-Clouds.net, Linux Host command, troubleshot your DNS: https://www.cloudns.net/blog/linux-host-command-troubleshot-dns/
+Clouds.net, Linux Host command, troubleshoot your DNS: https://www.cloudns.net/blog/linux-host-command-troubleshot-dns/
 
 Geeks for geeks, dig Command in Linux with Examples: https://www.geeksforgeeks.org/dig-command-in-linux-with-examples/
 
@@ -161,6 +161,8 @@ Namecheap: https://www.namecheap.com/
 Namecheap, All Types of DNS Records Explained: https://www.namecheap.com/support/knowledgebase/article.aspx/10594/10/all-types-of-dns-records-explained/
 
 Namecheap, Which record type option should I choose for the information I’m about to enter?: https://www.namecheap.com/support/knowledgebase/article.aspx/579/2237/which-record-type-option-should-i-choose-for-the-information-im-about-to-enter/
+
+Tero Karvinen, Linux Palvelimet 2025 alkukevät: https://terokarvinen.com/linux-palvelimet/
 
 Tero Karvinen, Name Based Virtual Hosts on Apache– Multiple Websites to Single IP Address: https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/
 
