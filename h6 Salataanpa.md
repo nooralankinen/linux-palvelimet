@@ -123,3 +123,5 @@ Jonkin aikaa sivusto teki testejä ja haki tietoja. Lopulta se antoi pitkän tes
   SSL Server Test: https://www.ssllabs.com/ssltest/
 
   The Apache Software Foundation 2025: Apache HTTP Server Version 2.4 [Official] Documentation: SSL/TLS Strong Encryption: How-To: Basic Configuration Example, https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample
+
+  Tero Karvinen, Linux Palvelimet 2025 alkukevät: https://terokarvinen.com/linux-palvelimet/
