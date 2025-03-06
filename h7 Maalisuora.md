@@ -9,7 +9,7 @@ Ja se näytti toimivan, koska asennus lähti pyörimään.
 
 (kuva asennus)
 
-##Python
+## Python
 
 Asennuksen jälkeen kävin silmäilemässä Pythonin manuaalin läpi, koska se oli näistä ohjelmointikielistä minulle entuudestaan tuttu. Manuaalin saa terminaalissa näkyviin komennolla $ man python3.
 Tämän jälkeen menin kirjoittamaan tiedostoa, joka sisältää näytettävän teksin "Hello world". Komento $ nano helloworld.py. 
@@ -25,7 +25,7 @@ Homma näytti toimivan kuten pitääkin.
 
 Seuraavaksi lähdin testaamaan samaa Bashillä. 
 
-##Bash 
+## Bash 
 
 Aloitin taas tutustumalla ensiksi Bashin manuaaliin. 
 
@@ -108,7 +108,7 @@ Päätin tähän osioon klo 14.33.
 
 ## d) Ratkaise vanha arvioitava laboratorioharjoitus
 
-Valitsin tehtäväksi edellisen vuoden kurssin lopputehtävän (https://terokarvinen.com/2024/arvioitava-laboratorioharjoitus-2024-linux-palvelimet/)
+Valitsin tehtäväksi edellisen vuoden kurssin lopputehtävän (https://terokarvinen.com/2024/arvioitava-laboratorioharjoitus-2024-linux-palvelimet/). Tehtävävalinta oli siinä mielessä oivallinen, että heti alkuun pääsin kertaamaan virtuaalikoneen luonnin, koska tehtävänannon mukaan työskentely tuli aloittaa tyhjältä Linux -koneelta. Asensin samalla myös arvioitavaa lopputehtävää varten tarvittavan uuden virtuaalikoneen.
 
 
 
@@ -124,3 +124,7 @@ Valitsin tehtäväksi edellisen vuoden kurssin lopputehtävän (https://terokarv
 ## Lähteet
 
 Tero Karvinen, Arvioitava laboratorioharjoitus 2024: https://terokarvinen.com/2024/arvioitava-laboratorioharjoitus-2024-linux-palvelimet/
+
+Tero Karvinen, Linux Palvelimet 2025 alkukevät: https://terokarvinen.com/linux-palvelimet/
+
+Tero Karvinen, Install Debian on VirtualBox: https://terokarvinen.com/2021/install-debian-on-virtualbox/
