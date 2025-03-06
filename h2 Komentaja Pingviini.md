@@ -182,6 +182,8 @@ Tero Karvinen 2024, Command Line Basics Revisited: https://terokarvinen.com/2020
 
 Tero Karvinen, Get Started Micro Editor: https://terokarvinen.com/get-started-micro-editor/?fromSearch=micro%20editor
 
+Tero Karvinen, Linux Palvelimet 2025 alkukevät: https://terokarvinen.com/linux-palvelimet/
+
 HowToGeek, How To Use Grep Command On Linux: https://www.howtogeek.com/496056/how-to-use-the-grep-command-on-linux/
 
 Roel Van Der Paar 2021, Ubuntu: Apt-get install multiple packages without stopping (2 Solutions!!): https://www.youtube.com/watch?v=gaZYYApnW8I
