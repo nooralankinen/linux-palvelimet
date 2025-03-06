@@ -203,7 +203,9 @@ Näille en enää osannut tehdä mitään, joten luovutin tämän lisätehtävä
 
   Apache, Name-based Virtual Host Support: https://httpd.apache.org/docs/2.4/vhosts/name-based.html
 
-  Karvinen, Name-Based Virtual Hosts On Apache - Multiple Websites to Single IP Address: https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/
+  Tero Karvinen, Linux Palvelimet 2025 alkukevät: https://terokarvinen.com/linux-palvelimet/
+
+  Tero Karvinen, Name-Based Virtual Hosts On Apache - Multiple Websites to Single IP Address: https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/
 
   Loggly, Linux Logging Basics: https://www.loggly.com/ultimate-guide/linux-logging-basics/
 
