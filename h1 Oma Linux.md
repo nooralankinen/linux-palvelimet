@@ -95,6 +95,7 @@ Tämän jälkeen kirjauduin ulos virtuaalikoneesta, sekä käynnistin sen uudell
 
 ## Lähteet
 
+Tero Karvinen, Linux Palvelimet 2025 alkukevät: https://terokarvinen.com/linux-palvelimet/
 
 Tero Karvinen, 2006, Raportin kirjoittaminen. https://terokarvinen.com/2006/raportin-kirjoittaminen-4/ 
 
