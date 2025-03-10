@@ -137,7 +137,7 @@ Eli poistetaan kolmannelta ryhmältä, others, read -oikeudet komennolla '$chmod
 
 D-kohdassa luodaan shell scripti, jota kaikki käyttäjät voivat käyttää. Luodaan ensin scriptin komennot tekstitiedostoon 'howdy'. Komennon oli tarkoitus tulostaa jotain ajankohtaista tietoa koneesta, joten valitsin komennoiksi 'date' , joka tulostaa päivämäärän ja kellonajan, sekä komennon 'whoami' joka tulostaa käyttäjän. Tiedoston sisältö oli siis seuraava: 
 
-![Add file: Upload](komento1.png)
+![Add file: Upload](komento.png)
 
 testataan komennon toimivuus ensin itsellä samassa kansiossa, ja sen jälkeen eri kansiossa: 
 
