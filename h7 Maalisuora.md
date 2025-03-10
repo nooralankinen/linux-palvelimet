@@ -122,6 +122,9 @@ Tehtävän raporttia varten loin kotihakemistooni kansion 'Report', ja sinne Nan
 Tehtävän varsinaisen raportin kirjoitan kuitenkin tänne GitHubiin. 
 
 ## b.) Tiivistelmä koko työstä
+
+Tein kaikki kohdat tehtävässä, paitsi h.) Djangon lahjat, koska Djangoa meille ei ole opetettu tässä kurssilla, enkä siis myöskään seuraavaa kohtaa Tuotantopropelli, samasta syystä. 
+Kaikki myös toimii tässä raportissa kuvatuilla tavoilla.
  
 
 ## c.) Ei kolmea sekoseiskaa
