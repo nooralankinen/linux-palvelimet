@@ -111,7 +111,7 @@ Ja sehän toimi sekin.
 Päätin tähän osioon klo 14.33.
 
 
-## d) Ratkaise vanha arvioitava laboratorioharjoitus
+# d) Ratkaise vanha arvioitava laboratorioharjoitus
 
 Valitsin tehtäväksi edellisen vuoden kurssin lopputehtävän (https://terokarvinen.com/2024/arvioitava-laboratorioharjoitus-2024-linux-palvelimet/). Tehtävävalinta oli siinä mielessä oivallinen, että heti alkuun pääsin kertaamaan virtuaalikoneen luonnin, koska tehtävänannon mukaan työskentely tuli aloittaa tyhjältä Linux -koneelta. Asensin samalla myös arvioitavaa lopputehtävää varten tarvittavan uuden virtuaalikoneen.
 
@@ -224,7 +224,7 @@ ja asennuksen jälkeen tarkistetaan ssh palvelimen tila:
 
 ![Add file: Upload](sshd.png)
 
-Seuraavaksi lisäsin uuden käyttäjän 
+Seuraavaksi lisäsin uuden käyttäjän järjestelmään: 
 
 ![Add file: Upload](adduser.png)
 
@@ -237,19 +237,21 @@ Kirjauduin sisään tunnuksella ja laatimallani salasanalla. Laadin ssh-keyn kom
 
 ![Add file: Upload](sshkey.png)
 
-SSH -keyn liittäminen ssh-kirjautumiseen komennolla '$ ssh-copy-id -i /home/noora/.ssh/id_rsa.pub noora@localhost' 
-Testasin kirjautumisen ssh-serveriin, ja salasanaa ei nyt kysytty. Eli liittäminen oli onnistunut. 
-Uudelleenkäynnistetään ssh serveri asetusten muokkaamisen jälkeen: '$ sudo systemctl restart sshd'. 
+SSH -keyn liittäminen ssh-kirjautumiseen tapahtui komennolla '$ ssh-copy-id -i /home/noora/.ssh/id_rsa.pub noora@localhost'. 
+Liittämisen jälkeen testasin kirjautumisen ssh-serveriin, ja salasanaa ei nyt enää kirjautumisen yhteydessä kysytty. Eli liittäminen oli onnistunut. 
+Uudelleenkäynnistin vielä ssh-serverin asetusten muokkaamisen jälkeen: '$ sudo systemctl restart sshd'. 
 
-Estetään root-kirjautuminen ssh-serverille: 
+Estetään root-kirjautuminen ssh-serverille seuraavilla komennoilla: 
 
 ![Add file: Upload](veks2.png)
 
-Testataan root-kirjautumisen lukituksen onnistuminen: 
+Ensimmäisellä komennolla estetään salasanalla kirjautuminen, ja jälkimmäisellä ssh-key -kirjautuminen. 
+
+Testataan vielä root-kirjautumisen lukituksen onnistuminen yrittämällä kirjautua sisään root:ina: 
 
 ![Add file: Upload](rootlock.png)
 
-Asensin tulimuurin komennolla '$sudo apt-get -y install ufw'. Reiät muuriin puolestaan komennolla $sudo ufw allow 22/tcp, $sudo ufw allow 80/tcp ja $sudo ufw enable. 
+Asennetaan tulimuurin koneelle komennolla '$sudo apt-get -y install ufw'. Reiät muuriin puolestaan komennolla '$sudo ufw allow 22/tcp' ja '$sudo ufw allow 80/tcp'. Otetaan uudet asetukset käyttöön: '$sudo ufw enable'. 
 Tarkistin vielä lopuksi asetusten toimivuuden komennolla '$sudo ufw status verbose.
 
 ![Add file: Upload](ufwstatus.png)
