@@ -238,11 +238,9 @@ SSH -keyn liittäminen ssh-kirjautumiseen komennolla '$ ssh-copy-id -i /home/noo
 Testasin kirjautumisen ssh-serveriin, ja salasanaa ei nyt kysytty. Eli liittäminen oli onnistunut. 
 Uudelleenkäynnistetään ssh serveri asetusten muokkaamisen jälkeen: '$ sudo systemctl restart sshd'. 
 
-Estetään root-kirjautuminen ssh-serverille: '$ sudo nano /etc/ssh/sshd_config' 
+Estetään root-kirjautuminen ssh-serverille: 
 
-![Add file: Upload](rootveks.png)
-
-![Add file: Upload](veks.png)
+![Add file: Upload](veks2.png)
 
 Testataan root-kirjautumisen lukituksen onnistuminen: 
 
