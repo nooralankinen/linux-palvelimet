@@ -12,7 +12,8 @@ Ensin avasin virtuaalikoneen, ja päivitin ohjelmat komennolla $sudo apt-get upd
 Kyetäkseni ajamaan eri ohjelmointikieliä, minun piti ensin asentaa ne Debianiin. Päätin testata alkuun tehtävän vinkkiosiossa annetun komennon, $ sudo apt-get install python3 gcc g++ openjdk-17-jdk golang-go ruby lua5.4.
 Ja se näytti toimivan, koska asennus lähti pyörimään. 
 
-![Alt](images/asennus.png)
+![Alt](images/images/asennus.png)
+
 
 ## Python
 
@@ -20,11 +21,13 @@ Asennuksen jälkeen kävin silmäilemässä Pythonin manuaalin läpi, koska se o
 Tämän jälkeen menin kirjoittamaan tiedostoa, joka sisältää näytettävän teksin "Hello world". Komento $ nano helloworld.py. 
 Tiedoston sisältö:
 
-![Alt](images/python1.png)
+![Alt](images/images/python1.png)
+
 
 Ja tämän jälkeen ajoin kyseisen tiedoston: 
 
-![Alt](images/python2.png)
+![Alt](images/images/python2.png)
+
 
 Homma näytti toimivan kuten pitääkin. 
 
@@ -34,15 +37,18 @@ Seuraavaksi lähdin testaamaan samaa Bashillä.
 
 Aloitin taas tutustumalla ensiksi Bashin manuaaliin. 
 
-![Alt](images/bash1.png)
+![Alt](images/images/bash1.png)
+
 
 Äskeisen osion kaavaa toistaen, kirjoitin tiedoston helloworld.sh Nano Editorilla. 
 
-![Alt](images/bash2.png)
+![Alt](images/images/bash2.png)
+
 
 Tiedoston tallennuksen jälkeen ajoin tiedoston: 
 
-![Alt](images/bash3.png)
+![Alt](images/images/bash3.png)
+
 
 Tämäkin toimi odotetusti, joten siirryin viimeisen kielen kimppuun. 
 
@@ -51,20 +57,24 @@ Tämäkin toimi odotetusti, joten siirryin viimeisen kielen kimppuun.
 C -kielestä minulla ei ole mitään aiempaa kokemusta, ja sen syntaksi näytti näinkin simppelille toiminnolle yllättävän monimutkaiselta. Kirjoitin kuitenkin Teron esimerkkiä (https://terokarvinen.com/2018/hello-python3-bash-c-c-go-lua-ruby-java-programming-languages-on-ubuntu-18-04/)
 noudattaen tiedoston helloworld.c, jonka sisältö näytti seuraavalta: 
 
-![Alt](images/c1.png)
+![Alt](images/images/c1.png)
+
 
 Tämän jälkeen jännityksellä ajoin ensimmäisen ajokomennon, myös Teron ohjeen perusteella: 
 
-![Alt](images/c2.png)
+![Alt](images/images/c2.png)
+
 
 No, se ei toiminut. Yritin avata C:n manuaalia komennolla $ man c, mutta sekään ei toiminut. Tutkiskelin hetken komennon rakennetta, ja päätin jättää siitä viimeisen 'helloworldc' -osion pois, ja katsoa mitä järjestelmä herjaa. Se kertoikin, että komennosta puuttuu nyt tiedoston nimi. 
 Ajattelin, että koska tiedoston nimi oli pelkkä 'helloworld', testaan sillä tuota komentoa, eli jätän viimeisen c-kirjaimen pois tiedostonimestä. Ja sillä se näytti toimivan: 
 
-![Alt](images/c3.png)
+![Alt](images/images/c3.png)
+
 
 Jostain syystä minulle jäi kuitenkin pieni epävarmuus siitä, lukiko ohjelma varmasti tämän helloworld.c -tiedoston, eikä esimerkiksi jotain muuta aiemmissa kohdissa luotua helloworld -tiedostoa, joten kävin vielä muokkaamassa helloworld.c -tiedoston tekstiä Nano editorilla, ja ajoin sen sitten uudestaan:
 
-![Alt](images/c4.png)
+![Alt](images/images/c4.png)
+
 
 Eli kaikki näytti olevan kunnossa. 
 
@@ -73,38 +83,45 @@ Eli kaikki näytti olevan kunnossa.
 Tätä harjoiteltiin jo hieman tiistain oppitunnilla. Luin kuitenkin vielä läpi Teron ohjeen Shell Scriptin luomiseen (https://terokarvinen.com/2007/12/04/shell-scripting-4/). 
 Sen jälkeen loin Nano editorilla tiedoston testikomento: $ nano testikomento, jonka sisältö oli seuraava:
 
-![Alt](images/testikomento1.png)
+![Alt](images/images/testikomento1.png)
+
 
 Kyseisen scriptin oli siis tarkoitus luoda uusi kansio nimeltä 'uusikansio', näyttää että kansio on luotu, vaihtaa kansion nimi 'roskakansio':ksi, näyttää että vaihto onnistui, jonka jälkeen poistaa kyseinen kansio, ja näyttää vielä lopuksi kansion sisältö.
 Testasin scriptin komennolla $ bash testikomento :
 
-![Alt](images/scripti2.png)
+![Alt](images/images/scripti2.png)
+
 
 Ja sehän ei toiminut, koska scriptin sisällä oli yksi komento väärin. Kävin korjaamassa rivin 'rm roskakansio' -> 'rm -r roskakansio'. 
 Ja sitten tallennuksen jälkeen uudelleen scriptin testaus: 
 
-![Alt](images/scripti3.png)
+![Alt](images/images/scripti3.png)
+
 
 Noh, ei se kaunis ole, mutta scripti periaatteessa kuitenkin toimii. Luettavuuden parantamiseksi rajasin kuvakaappauksessa eri ls -komentojen tulosteet omiksi laatikoikseen. Scriptin toimintaa hieman sekoitti jo edellisessä scriptin ajokomennossa luotu kansio 'roskakansio', jonka poisto kuitenkin epäonnistui, ja se näkyyedelleen ensimmäisen ajetun 'ls' -komennon jälkeen kansioiden joukossa. 
 Seuraava komento 'mv uusikansio roskakansio' kuitenkin siirtää uusikansio:n tämän roskakansion sisään, ja lopulta poistaa roskakansion. Eli lopputulos on kuitenkin oikein, koska viimeisessä ls -tulosteessa ei näy enää uusikansio:ta tai roskakansio:ta. 
 Kyseinen scripti toimii tällä hetkellä ollessamme kansiossa /home/nooral. Todentaakseni tämän siirryin toiseen kansioon, ja yritin ajaa komennon '$ bash testikomento', siinä kuitenkaan odotetusti onnistumatta: 
 
-![Alt](images/scripti4.png)
+![Alt](images/images/scripti4.png)
+
 
 Menin seuraavaksi tarkastelemaan kansion käyttöoikeuksia. 
 
-![Alt](images/oikeudet.png)
+![Alt](images/images/oikeudet.png)
+
 
 Siellä näyttikin jo kaikilla olevan oikeus ajaa kyseinen tiedosto, joten sitä ei tarvinnut erikseen lisätä. Testasin vielä asian ajamalla '$ /home/nooral/testikomento':
 
-![Alt](images/scripti5.png)
+![Alt](images/images/scripti5.png)
+
 
 Tehtävänannon mukaisesti, myös muille käyttäjille tuli antaa mahdollisuus ajaa kyseinen komento. 
 Eli sitä varten, kyseinen scriptikansio tulee kopioida käyttäjän omasta kotihakemistosta kohteeseen /usr/local/bin, josta se on myös muiden käyttäjien saatavilla. 
 Suoritetaan kopiointi komennolla '$ sudo cp testikomento /usr/local/bin/'. 
 Tämä toiminto mahdollistaa myös komennon käytön ilman kansiopolkua tai bash -komentoa. Siksi testaamme siirron onnistumisen yksinkertaisesti komennolla '$ testikomento':
 
-![Alt](images/scripti6.png)
+![Alt](images/images/scripti6.png)
+
 
 Ja sehän toimi sekin. 
 
@@ -130,42 +147,51 @@ Kaikki myös toimii tässä raportissa kuvatuilla tavoilla.
 ## c.) Ei kolmea sekoseiskaa
 C-kohdassa puolestaan suojataan aiemmin luotu kansio niin, että vain minä pystyn katselemaan raporttia. Mennään siis ensiksi katsomaan, mitkä kansion oikeudet ovat tällä hetkellä. Sen näemme komennolla '$ ls -l'
 
-![Alt](images/oikeudet1.png)
+![Alt](images/images/oikeudet1.png)
+
 
 Eli poistetaan kolmannelta ryhmältä, others, read -oikeudet komennolla '$chmod o-r index.md'. Ja tarkistetaan vielä ls -l -komennolla, että oikeudet ovat nyt oikein:
 
-![Alt](images/oikeudet2.png)
+![Alt](images/images/oikeudet2.png)
+
 
 ## d.) 'howdy'
 
 D-kohdassa luodaan shell scripti, jota kaikki käyttäjät voivat käyttää. Luodaan ensin scriptin komennot tekstitiedostoon 'howdy'. Komennon oli tarkoitus tulostaa jotain ajankohtaista tietoa koneesta, joten valitsin komennoiksi 'date' , joka tulostaa päivämäärän ja kellonajan, sekä komennon 'whoami' joka tulostaa käyttäjän. Tiedoston sisältö oli siis seuraava: 
 
-![Alt](images/komento.png)
+![Alt](images/images/komento.png)
+
 
 testataan komennon toimivuus ensin itsellä samassa kansiossa, ja sen jälkeen eri kansiossa: 
 
-![Alt](images/komentotesti1.png)
+![Alt](images/images/komentotesti1.png)
+
 
 Ja kuten tässä kohtaa kuuluukin, scripti toimii minulla kyseisessä kansiossa jossa se on, mutta ei siirryttäessä toiseen kansioon. 
 Katsotaan komennon käyttöoikeudet: 
 
-![Alt](images/oikeudet3.png)
+![Alt](images/images/oikeudet3.png)
+
 
 Ja kaikilla käyttäjillä oli lukuoikeus, mutta ei oikeutta suorittaa, joten lisätään se oikeus kaikille komennolla '$ chmod ugo+x howdy', ja tarkistetaan taas oikeudet: 
 
-![Alt](images/oikeudet4.png)
+![Alt](images/images/oikeudet4.png)
+
 
 Eli nyt komennon suoritus pitäisi onnistua mistä tahansa kansiosta, kirjoittamalla tiedostopolun /home/nooral/howdy. Eli testataan sen toimivuus vielä käytännössä: 
 
-![Alt](images/ajotesti.png)
+![Alt](images/images/ajotesti.png)
+
 
 Toimii kuten pitääkin. Vielä viimeiseksi, tehtävänannon mukaisesti haluamme kuitenkin että komento on paitsi muidenkin käytössä, niin myös käytettävissä ilman bash -alkua tai hakemistopolkua. Siksi kopioimme tiedoston omasta kotihakemistostamme vielä kansioon usr/local/bin. Eli komennolla '$ sudo cp howdy /usr/local/bin/' kopioidaan tiedosto. Katsotaan sen jälkeen, että tiedoston kopiointi todella onnistui kohdekansioon, sekä testataan että komento 'howdy' toimii nyt yksinään: 
 
-![Alt](images/testikomento2.png)
+![Alt](images/images/testikomento2.png)
+
 
 Ja vielä viimeiseksi testaus toisella käyttäjällä: 
 
-![Alt](images/testikomento3.png)
+![Alt](images/images/testikomento3.png)
+
 
 Testaus tuotti halutun tuloksen. 
 
@@ -173,15 +199,18 @@ Testaus tuotti halutun tuloksen.
 
 Lähdetään asentamaan Apache2 -webbipalvelinta. Komennolla '$ sudo apt-get -y install apache2' saadaan ohjelma asennettua koneelle. Asennuksen jälkeen testataan ohjelma, '$ firefox "http://localhost"' -komennolla: 
 
-![Alt](images/apache.png)
+![Alt](images/images/apache.png)
+
 
 Seuraavaksi korvataan aiempi oletussivu, komennolla '$ echo "Uusi oletussivu"|sudo tee /var/www/html/index.html', 
 
-![Alt](images/uusioletus.png)
+![Alt](images/images/uusioletus.png)
+
 
 sekä luodaan tiedostopolkuun /etc/apache2/sites-available/ tiedosto 'aikakone.com.conf', jonne laaditaan uusi Name Based Virtual Host -konfiguraatio: 
 
-![Alt](images/uusikonf.png)
+![Alt](images/images/uusikonf.png)
+
 
 Otetaan uusi konfiguratio käyttöön: '$ sudo a2ensite aikakone.com' ja 
 restartataan Apache: '$ sudo systemctl restart apache2'. 
@@ -192,41 +221,50 @@ Kansioon 'aikakone.com' puolestaan tiedosto index.html, jonka sisällä on netti
 
 Testataan komennolla '$ curl -H 'Host: aikakone.com' localhost' 
 
-![Alt](images/kone.png)
+![Alt](images/images/kone.png)
+
 
 .. ja komennolla '$ curl localhost'
 
-![Alt](images/localhost.png)
+![Alt](images/images/localhost.png)
+
 
 Käydään muokkaamassa /etc/hosts/ -tiedostoa, lisätään sinne luomamme Name Based Virtual Host aikakone.com, jotta sivua voi jatkossa tarkastella selaimessa:
 
-![Alt](images/hosts.png)
+![Alt](images/images/hosts.png)
+
 
 Ja testataan toimivuus lopuksi selaimessa kirjoittamalla osoiteriville 'aikakone.com': 
 
-![Alt](images/lopputulos.png)
+![Alt](images/images/lopputulos.png)
+
 
 ..sekä 'localhost':
 
-![Alt](images/lopputulos2.png)
+![Alt](images/images/lopputulos2.png)
+
 
 Ja tästä näemme, että luomamme uusi name based virtual host toimii. Sivun sisältöä voidaan muokata ilman sudo-oikeuksia tiedostossa /home/nooral/publicsites/aikakone.com/index.html. 
 Mennään tekemään vielä pieni muutos sivun teksteihin: 
 
-![Alt](images/html5.png)
+![Alt](images/images/html5.png)
 
-![Alt](images/aikakone.png)
+
+![Alt](images/images/aikakone.png)
+
 
 ## g.) Salattua hallintaa 
 
 Asennetaan koneelle alkuun ssh-palvelin, komennolla '$ sudo apt-get -y install openssh-server', 
 ja asennuksen jälkeen tarkistetaan ssh palvelimen tila: 
 
-![Alt](images/sshd.png)
+![Alt](images/images/sshd.png)
+
 
 Seuraavaksi lisäsin uuden käyttäjän järjestelmään: 
 
-![Alt](images/adduser.png)
+![Alt](images/images/adduser.png)
+
 
 Käyttäjän lisäyksen jälkeen lisäsin käyttäjän sudo- ja admin -ryhmiin komennoilla:
 
@@ -235,7 +273,8 @@ Käyttäjän lisäyksen jälkeen lisäsin käyttäjän sudo- ja admin -ryhmiin k
 
 Kirjauduin sisään tunnuksella ja laatimallani salasanalla. Laadin ssh-keyn komennolla '$ ssh-keygen'
 
-![Alt](images/sshkey.png)
+![Alt](images/images/sshkey.png)
+
 
 SSH -keyn liittäminen ssh-kirjautumiseen tapahtui komennolla '$ ssh-copy-id -i /home/noora/.ssh/id_rsa.pub noora@localhost'. 
 Liittämisen jälkeen testasin kirjautumisen ssh-serveriin, ja salasanaa ei nyt enää kirjautumisen yhteydessä kysytty. Eli liittäminen oli onnistunut. 
@@ -243,18 +282,21 @@ Uudelleenkäynnistin vielä ssh-serverin asetusten muokkaamisen jälkeen: '$ sud
 
 Estetään root-kirjautuminen ssh-serverille seuraavilla komennoilla: 
 
-![Alt](images/veks2.png)
+![Alt](images/images/veks2.png)
+
 
 Ensimmäisellä komennolla estetään salasanalla kirjautuminen, ja jälkimmäisellä ssh-key -kirjautuminen. 
 
 Testataan vielä root-kirjautumisen lukituksen onnistuminen yrittämällä kirjautua sisään root:ina: 
 
-![Alt](images/rootlock.png)
+![Alt](images/images/rootlock.png)
+
 
 Asennetaan tulimuurin koneelle komennolla '$sudo apt-get -y install ufw'. Reiät muuriin puolestaan komennolla '$sudo ufw allow 22/tcp' ja '$sudo ufw allow 80/tcp'. Otetaan uudet asetukset käyttöön: '$sudo ufw enable'. 
 Tarkistin vielä lopuksi asetusten toimivuuden komennolla '$sudo ufw status verbose.
 
-![Alt](images/ufwstatus.png)
+![Alt](images/images/ufwstatus.png)
+
  
 Lopuksi vielä softien päivitys komennoilla $ sudo apt-get update ja $ sudo apt-get upgrade.
 

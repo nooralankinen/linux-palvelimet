@@ -29,13 +29,16 @@ Valitsin palveluntarjoajaksi virtuaalipalvelimelleni Upcloudin (https://upcloud.
 Heidän sivulleen piti ihan alkuun rekisteröityä, ja luoda tunnukset. Tein tämän, jonka jälkeen aloin valita itselleni serveriä. Otin käyttöön heidän Free trial -kokeilujakson, mutta koska se oli voimassa vain kymmenen päivää, päädyin saman tien päivittämään varsinaiseen versioon. 
 Vasemman reunan valikosta menin kohtaan 'Servers', jonka välilehdellä luki, ettei minulla vielä ole käytössäni yhtään serveriä. Klikkasin teksin alta violettia painiketta '+ Deploy Server'. 
 
-![Add file: Upload](upcloud-serverin-luonti.png)
+![Add file: Upload](images/upcloud-serverin-luonti.png)
+
 
 Sen jälkeen pääsin tekemään ensimmäisiä valintoja serverilleni:
 
-![Add file: Upload](Server-valinnat1.png)
+![Add file: Upload](images/Server-valinnat1.png)
 
-![Add file: Upload](server-valinnat2.png)
+
+![Add file: Upload](images/server-valinnat2.png)
+
 
 Näiden jälkeen pitikin valita sisäänkirjautumismetodi, jolle ei tässä edes annettumuita vaihtoehtoja kuin SSH-Key. Se täytyy luoda virtuaalikoneella, joten avasin virtuaalikoneeni ja sieltä terminaalin. 
 Päivitin alkuun ohjelmat tutulla komennolla $ sudo apt-get update. 
@@ -44,17 +47,20 @@ Debian 12 -käyttöjärjestelmässä ei automaattisesti ole OpenSSH:ta, joten as
     $ sudo apt-get -y install openssh-client
     $ ssh keygen
 
-![Add file: Upload](sshkey-luonti.png)
+![Add file: Upload](images/sshkey-luonti.png)
+
 
 Menin hakemaan public keyn hakemistopolusta /home/nooral/.ssh/id_rsa.pub, jonne se tallennettiin,
 ja liitin sen virtuaaliserverin tietoihin. 
 Tämän jälkeen sivu loi hetken aikaa serveriä minulle. 
 
-![Add file: Upload](serveria-luodaan.png)
+![Add file: Upload](images/serveria-luodaan.png)
+
 
 Kun serveri oli valmis, sivu tarjosi myös ohjetta sen käyttöönottoon.
 
-![Add file: Upload](serveri-yhdistysohje.png)
+![Add file: Upload](images/serveri-yhdistysohje.png)
+
 
 
 ## b) Tee alkutoimet omalla virtuaalipalvelimellasi
@@ -66,11 +72,13 @@ Lisäsin itseni uudeksi käyttäjäksi, sekä sudo -ryhmään komennoilla
       $sudo adduser noora sudo
       $sudo adduser noora adm
 
-  ![Add file: Upload](adduser.png)
+  ![Add file: Upload](images/adduser.png)
+
 
   Tämän jälkeen avasin uuden terminaalin testatakseni tunnuksieni toimivuutta. Tunnukset eivät kuitenkaan toimineet, vaan antoivat seuraavan virheen:
 
-  ![Add file: Upload](permission-denied.png)
+  ![Add file: Upload](images/permission-denied.png)
+
 
   Stackoverflow -sinulta löysin jonkinlaisen ohjeistuksen, jolla yrittää korjata tilanne Public Keyn lanssa (https://stackoverflow.com/questions/2643502/git-how-to-solve-permission-denied-publickey-error-when-using-git)
   Joten annoin komennoiksi 
@@ -78,7 +86,8 @@ Lisäsin itseni uudeksi käyttäjäksi, sekä sudo -ryhmään komennoilla
       $ eval $(ssh-agent -s)
       $ ssh-add /home/nooral/.ssh/id_rsa.pub
 
-  ![Add file: Upload](privatekey-ignored.png)
+  ![Add file: Upload](images/privatekey-ignored.png)
+
 
   Mutta se ei toiminut, koska private key oli luotu toiselle käyttäjälle.
   Kyselin neuvoa kurssikavereilta, ja sieltä sainkin vinkiksi siirtää ssh:n tiedoston tälle uudelle käyttäjälleni. Googlailin siihen ohjeet, ja löysinkin (https://askubuntu.com/questions/1218023/copying-ssh-key-from-root-to-another-user-on-same-machine). 
@@ -87,7 +96,8 @@ Lisäsin itseni uudeksi käyttäjäksi, sekä sudo -ryhmään komennoilla
   Seuraavaksi päivitin ohjelmat, ja lähdin luomaan reikiä porteille 22 ja 80 ssh:lle enne tulimuurin asennusta. Asensin ufw:n komennolla $sudo apt-get -y install ufw 
   Reiät puolestaan komennolla $sudo ufw allow 22/tcp, $sudo ufw allow 80/tcp ja $sudo ufw enable. Tarkistin vielä lopuksi toimivuuden komennolla $sudo ufw status verbose. 
 
-  ![Add file: Upload](ufw-status.png)
+  ![Add file: Upload](images/ufw-status.png)
+
 
   Sitten piti vielä lukita root -käyttäjä. Annoin komennon $ sudo usermod --lock root , jolla lukittiin salasanakirjautuminen. Komennolla $ sudo rm /root/.ssh -R puolestaan estin kirjautumisen SSH-avaimella. 
 
@@ -99,12 +109,14 @@ Lisäsin itseni uudeksi käyttäjäksi, sekä sudo -ryhmään komennoilla
 Päätin asentaa weppipalvelimeksi tutun ja turvallisen Apache2:n. Asennus komennolla $ sudo apt-get -y install apache2. 
 Ja tämän jälkeen tarkistus $ systemctl status apache2
 
-![Add file: Upload](apache-asennus.png)
+![Add file: Upload](images/apache-asennus.png)
+
 
 Lähdin muokkaamaan näkyvää oletussivua. 
 Tein sovelletusti Teron ohjeen mukaan (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/), eli komennolla $ echo "Testisivu"|sudo tee /var/www/html/index.html. 
 
-![Add file: Upload](testisivu-1.png)
+![Add file: Upload](images/testisivu-1.png)
+
 
 Ja sivu näytti siltä miltä pitikin.
 
@@ -127,7 +139,8 @@ Noudatin samaa, edellisessä kohdassa mainittua Teron ohjetta, ja loin sivulle u
 ja otin vielä kyseisen konfiguraation käyttöön. Sen jälkeen loin tekstitiedoston index.html polkuun,  /home/nooral/publicsites/kissa.example.com/, ja sinne sivulla näkyvän sisällön. 
 Testasin sivujen toimivuuden ensin terminaalissa, komennolla '$ curl localhost', se oli ok. Sitten selaimessa, ja sekin ok. Puhelimella en ensin saanut sivua näkyviin, koska en tajunnut laittaa eteen http://, mutta kysyin neuvoa chatGPT:ltä, ja se ohjeisti tämän toimintatavan. Sen jälkeen sivut löytyivät myös puhelimella. 
 
-![Add file: Upload](testisivu.png)
+![Add file: Upload](images/testisivu.png)
+
 
 
 

@@ -62,14 +62,16 @@ Apache 2 asensin jo tunnilla 28.1 klo 17.40 alkaen, komennoilla
 
 Testasin, että default page toimii selaimessa
 
-![Alt](images/Default-page.png)
+![Alt](images/images/Default-page.png)
+
 
 
 # b. Loki
 
 Tein tämän osion tehtävästä 29.1 klo 12.40 
 
-![Alt](images/loki2901.png)
+![Alt](images/images/loki2901.png)
+
 
 Ensimmäisenä lokimerkinnässä näkyy nk. "loopback" IP-osoite 127.0.0.1., koska pyyntö tehtiin samalta koneelta. Sitä seuraa kyseisen tapahtumahetken aikaleima. "GET /favicon.ico HTTP/1.1"  on komento, jota palvelin lähtee suorittamaan. GET toiminto kertoo, että kyseessä on HTTP ja 1.1 on protokollaversio, favicon.ico on sivu jota pyydettiin. 404 on HTTP statuskoodi (tiedostoa ei löydy), ja 487 on vastauksen koko bitteinä. Pyyntö tuli sivulta http://localhost, ja Linux x86_64 koneelta jolla käytössä Firefox 128.0 -selain. 
 
@@ -82,7 +84,8 @@ Seuraavaksi loin uuden Name Based Virtual Hostin,
     
 ... ja konfiguroin sille kuvan mukaiset asetukset.
 
-![Alt](images/conf-dns.png)
+![Alt](images/images/conf-dns.png)
+
 
 Enablasin sivun ja uudelleenkäynnistin virtuaalikoneen
 
@@ -96,7 +99,8 @@ Seuraavaksi loin uudella etusivulla näytettävän tiedoston
 
   Tämän jälkeen testasin toimivuutta esin terminaalissa
 
-  ![Alt](images/hattu-testing.png)
+  ![Alt](images/images/hattu-testing.png)
+
 
   sekä selaimessa. Selaimessa localhost -sivu näkyi edelleen. 
 
@@ -123,7 +127,8 @@ Ja sisältö on seuraava:
 
 Ja näkymä sivulla on: 
 
-![Alt](images/hattu-final.png)
+![Alt](images/images/hattu-final.png)
+
 
 
 # f) Anna esimerkit 'curl -I' ja 'curl' -komennoista
@@ -131,17 +136,20 @@ Ja näkymä sivulla on:
 cURL -toiminto hakee dataa verkosta serverin kautta.
 Ensin hain tietoja komennolla '$ culr localhost'
 
-![Alt](images/curl-localhost.png)
+![Alt](images/images/curl-localhost.png)
+
 
 komento 'curl -I (verkkosivu)' puolestaan näyttää haetun sivun serveriltä vastauksena tullutta sivun metadataa, kuten vaikkapa statuskoodin, sisällön tyypin, välimuistin ja evästeet. 
 Ensiksi tein haun osoitteella www.haaga-helia.fi:
 
-![Alt](images/curl-I1.png)
+![Alt](images/images/curl-I1.png)
+
 
 Ja tiedoista näemme, että yhteytenä käytetään HTTP -protokollan versiota 1.1. Statuskoodi on 301, eli sivu on siirtynyt pysyvästi. URL uudelleenohjaa sivun oikeaan osoitteeseen, mutta pelkkä cURL -toiminto ei pysty automaattisesti seuraamaan tätä uudelleenohjausta. 
 Seuraavaksi haku osoitteella www.hs.fi:
 
-![Alt](images/curl-I2.png)
+![Alt](images/images/curl-I2.png)
+
 
 Ja itseasiassa tämän sivun kanssa on melko sama alku, eli tämäkin sivu oodelleenohautuu, eikä cURL -komento ole pystynyt seuraamaan sitä uuteen osoitteeseen. 
 
@@ -166,11 +174,13 @@ Sen jälkeen loin uuden virtual host -määrityksen näille molemmille:
         $ sudoedit /etc/apache2/sites-available/foo.example.com.conf
 
 
-![Alt](images/virtual-hosts.png)
+![Alt](images/images/virtual-hosts.png)
+
 
 Tämän jälkeen testasin komennolla curl -H 'Host: foo.example.com' localhost, mutta näkyviin tulivat vanhan sivun tiedot. Sen jälkeen menin tarkistamaan sites-enabled -tiedoston, ja siellä tosiaan oli vain vanhan sivun konfiguraatiotiedosto. 
 
-![Alt](images/error-vhosts.png)
+![Alt](images/images/error-vhosts.png)
+
 
 En tiedä, mitä aiemmin luoduille tiedostoille oli tapahtunut, mutta tein nyt vielä uudet komennoilla 
 
@@ -183,11 +193,13 @@ Sain sen pois päältä, ja järjestelmä muistutti että se piti uudelleenkäyn
 En muistanut, olinko jo ottanut uudet sivut käyttöön, joten tein sen nyt komennolla $ sudo a2ensite foo.example.com. 
 Yrittäessäni käynnistää apachen uudelleen, tuli seuraava virheilmoitus: 
 
-![Alt](images/error-toinen.png)
+![Alt](images/images/error-toinen.png)
+
 
 Menin katsomaan tuon viimeisimmän lokin tiedot, ja sieltä löytyi seuraavat: 
 
-![Alt](images/viimeinen-virhe.png)
+![Alt](images/images/viimeinen-virhe.png)
+
 
 Näille en enää osannut tehdä mitään, joten luovutin tämän lisätehtävän kanssa. 
 

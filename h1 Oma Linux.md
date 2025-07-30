@@ -32,7 +32,8 @@ x.) Raporttiohje:
 
 Aloitin virtuaalikoneen ja Debianin asennuksen kotona tiistaina 14.1 kurssin ensimmäisen luennon jälkeen klo 20.52, hakemalla Tero Karvisen 2024 laatimat yksityiskohtaiset asennusohjeet sivulta https://terokarvinen.com/2021/install-debian-on-virtualbox/ . 
 
- ![Alt](images/asennusohje.png)
+ ![Alt](images/images/asennusohje.png)
+
 
 Koneena minulla on Asus Vivobook Pro 15 -läppäri, host OS Windows 11 Home. 
 
@@ -56,13 +57,15 @@ Ensimmäinen video oli SavvyNik :in video "How to Install Debian 12 on VirtualBo
 kun asennuksen aloituksessa en videon mukaisesti ollut klikannut aiemmin "ISO Image" -täppää aktiiviseksi. Tämän jälkeen poistin koko latauksen, ja latasin koko Debian -paketin uudelleen. 
 Aloittaessani virtuaalikoneen luomista uudelleen, totesin ettei sellaista kohtaa edes ollut minun luomissivullani.
 
-![Alt](images/virtual-machine.png)
+![Alt](images/images/virtual-machine.png)
+
 
 Katsoin videota hetken eteenpäin, ja lopulta tajusin videon mukaisesti raahata tiedoston suoraan ladattujen tiedostojen kansiosta ilman tiedoston avaamista,
 jolloin se toimi ja pääsin eteenpäin. 
 Virtuaalikoneelle päästyäni testasin ensin, että se toimii. 'Applications' -valikosta avasin nettiselaimen klikkaamalla 'Web Browser', ja kirjoitin osoiteriville terokarvinen.com. Sivu aukesi onnistuneesti, jonka jälkeen suljin selaimen.
 
-![Alt](images/vm-testing.png)
+![Alt](images/images/vm-testing.png)
+
 
 Tämän jälkeen aloin asentaa Debiania. Avasin virtuaalikoneen, ja vasemman reunan "Install Debian" kuvaketta klikkaamalla etenin asennukseen. Klikkailin asennusohjeen mukaisesti oikean sijainnin, kielen (englanti), näppäimistön (Finnish) ja testasin ääkkösten toimivuuden testilaatikossa.
 'Partitions' -välilehdellä valitsin 'Erase disk', ja 'Users' -välilehdellä syötin puolestaan omat tietoni, sekä asetin salasanan. 'Summary' -lehden tarkistuksen jälkeen klikkasin sivun alareunasta 'Install' -painiketta. 
@@ -79,14 +82,16 @@ Seuraavaksi ladattiin kaikki nämä uusimmat versiot komennolla
 
      $ sudo apt-get -y dist-upgrade
 
-![Alt](images/terminaali.png)
+![Alt](images/images/terminaali.png)
+
 
 Tämän jälkeen asensin ja käynnistin palomuurin komennoilla 
 
     $ sudo apt-get -y install ufw 
     $ sudo ufw enable
 
-![Alt](images/firewall-activation.png)
+![Alt](images/images/firewall-activation.png)
+
 
 Tämän jälkeen kirjauduin ulos virtuaalikoneesta, sekä käynnistin sen uudelleen (Application ja sieltä Log Out -> Restart).
 
