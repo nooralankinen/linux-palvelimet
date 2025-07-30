@@ -37,7 +37,7 @@
   
   Aloitin menemällä Let's Encryptin sivuille (https://letsencrypt.org/), ja klikkaamalla heti etusivun bannerista 'Get Started'.
   
-  ![Add file: Upload](letsencrypt.png)
+  ![Alt](images/letsencrypt.png)
   
   Siitä aukesi 'Lets Get Started' -sivu, jossa kerrottiin että useimmissa tapauksissa hosting provider hakee ja hoitaa Let's Encryptin sertifikaatit. Mutta koska hallinnoimme serveriä itse, ei hostausta ole, joten sertifikaatit pitää tällöin hakea itse. Sivusto       
   suositteli
@@ -48,11 +48,11 @@
 
 Asennuksen jälkeen testasin toimivuuden
 
-![Add file: Upload](lego.png)
+![Alt](images/lego.png)
 
 Menin tämän jälkeen luomaan kansion Lego:lle kotihakemistooni:
 
-![Add file: Upload](legokansio.png)
+![Alt](images/legokansio.png)
 
 Koska meillä on jo olemassa oleva verkkopalvelin portissa 80 käytämme sitä, ja annamme Legolle tiedon, minne haluamme sen kirjoittavan varmenteen saamiseen tarvittavat tiedostot. Tämän vuoksi kävin aiemmin luomassa kansion, jonne tiedostot kirjoitetaan. Komennon runko näyttää jotakuinkin tältä:
 
@@ -60,27 +60,27 @@ Koska meillä on jo olemassa oleva verkkopalvelin portissa 80 käytämme sitä, 
 
 Katsoin tunnilta ottamiani kuvakaappauksia, ja niissä komento näytti hieman erilaiselta. Se oli seuraava (omilla tiedoillani):
 
-![Add file: Upload](yritys1.png)
+![Alt](images/yritys1.png)
 
 Tällä komennolla ei kuitenkaan saanut muuta kuin Legon help -tiedot näkyville. Eli se ei toiminut. Myöskään mitään uusia tiedostoja tai kansioita ei ollut tullut mihinkään. Kokeilin seuraavaksi tuota Legon versiota komennosta omilla tiedoilla: 
 
-![Add file: Upload](yritys2.png)
+![Alt](images/yritys2.png)
 
 Ja nyt tiedostojen luonti näytti onnnistuvan. Kävin vielä tarkistamassa järjestelmän ilmoittamassa tallennuskansiossa /home/noora/.lego , ja sieltä sertifikaatit löytyivätkin.
 
-![Add file: Upload](sertifikaatit.png)
+![Alt](images/sertifikaatit.png)
 
 Eli seuraavaksi tekemään alla näkyvät lisäykset konfiguraatiotiedostoon, /etc/apache2/sites-available/nooralankinen.com.conf. 
 
-![Add file: Upload](konfiguraatio.png)
+![Alt](images/konfiguraatio.png)
 
 Tein reiän palomuuriin portille 443 komennolla 'sudo ufw allow 443/tcp' sekä tarkistin että toiminto onnistui komennolla 'sudo ufw status':
 
-![Add file: Upload](ufw.png)
+![Alt](images/ufw.png)
 
 Ja lopuksi menin vielä tarkistamaan selaimelta, että sertifikaatti otettiin käyttöön onnistuneesti: 
 
-![Add file: Upload](finaltest.png)
+![Alt](images/finaltest.png)
 
 
 **Muokattu 2.3.2025, lisättu unohtunut tehtävän kohta**
@@ -89,13 +89,13 @@ Ja lopuksi menin vielä tarkistamaan selaimelta, että sertifikaatti otettiin k�
 
 Menin sivustolle https://www.ssllabs.com/ssltest/ testaamaan sivuston TLS:n. Syötin etusivun kenttään domainini nooralankinen.com. 
 
-![Add file: Upload](ssltest.png)
+![Alt](images/ssltest.png)
 
 Jonkin aikaa sivusto teki testejä ja haki tietoja. Lopulta se antoi pitkän testiraportin tekemistään testeistä ja niiden tuloksista. Otsikkoina olivat esimerkiksi protocols, cipher suites, handshake simulation ja protocol detail. 
 
-![Add file: Upload](raport1.png)
+![Alt](images/raport1.png)
 
-![Add file: Upload](raportti21.png)
+![Alt](images/raportti21.png)
 
 
 
